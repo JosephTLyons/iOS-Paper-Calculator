@@ -254,11 +254,18 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == equals)
     {
         //[UserButtonCode_equals] -- add your button handler code here..
+        
+        calculateObject.performCalculation();
+        
         //[/UserButtonCode_equals]
     }
     else if (buttonThatWasClicked == plus)
     {
         //[UserButtonCode_plus] -- add your button handler code here..
+        
+        calculateObject.transferTotalToOperand();
+        calculateObject.setOperationChosen(1);
+        
         //[/UserButtonCode_plus]
     }
     else if (buttonThatWasClicked == one)
@@ -336,16 +343,28 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == minus)
     {
         //[UserButtonCode_minus] -- add your button handler code here..
+        
+        calculateObject.transferTotalToOperand();
+        calculateObject.setOperationChosen(2);
+        
         //[/UserButtonCode_minus]
     }
     else if (buttonThatWasClicked == multiply)
     {
         //[UserButtonCode_multiply] -- add your button handler code here..
+        
+        calculateObject.transferTotalToOperand();
+        calculateObject.setOperationChosen(3);
+        
         //[/UserButtonCode_multiply]
     }
     else if (buttonThatWasClicked == divide)
     {
         //[UserButtonCode_divide] -- add your button handler code here..
+        
+        calculateObject.transferTotalToOperand();
+        calculateObject.setOperationChosen(4);
+        
         //[/UserButtonCode_divide]
     }
     else if (buttonThatWasClicked == set)

@@ -17,7 +17,6 @@ private:
     
     double total;
     double operandOne;
-    double operandTwo;
     double storageA;
     double storageB;
     
@@ -32,24 +31,21 @@ public:
     
     Calculate();
     
+    void clearTotal();
     void basicClear();
     void advancedClear();
     void performCalculation();
     void calculateNumberInput(const int &singleDigitInput);
     
-    void add(const double &input);
-    void subtract(const double &input);
-    void multiply(const double &input);
-    void divide(const double &input);
-    
     void setOperandOne(const double &input);
-    void setOperandTwo(const double &input);
     void setStorageA(const double &input);
     void setStorageB(const double &input);
     void setOperationChosen(const int &input);
     void setDecimalPointFlag(const bool &trueOrFalse);
     
     double getTotalValue();
+    
+    void transferTotalToOperand();
 };
 
 #endif /* Calculate_hpp */

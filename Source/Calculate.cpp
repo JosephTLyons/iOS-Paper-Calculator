@@ -15,11 +15,15 @@ Calculate::Calculate()
 
 /**************************************************/
 
+void Calculate::clearTotal()
+{
+    total = 0;
+}
+
 void Calculate::basicClear()
 {
-    total                         = 0;
+    clearTotal();
     operandOne                    = 0;
-    operandTwo                    = 0;
     
     decimalPointFlag              = false;
     dividingNumberForDecimalPlace = 1;
@@ -40,16 +44,16 @@ void Calculate::performCalculation()
     switch (operatorChosen)
     {
         case addition:
-            total = operandOne + operandTwo;
+            total = operandOne + total;
             break;
         case subtraction:
-            total = operandOne - operandTwo;
+            total = operandOne - total;
             break;
         case multiplication:
-            total = operandOne * operandTwo;
+            total = operandOne * total;
             break;
         case division:
-            total = operandOne / operandTwo;
+            total = operandOne / total;
             break;
             // Do nothing
         default:
@@ -63,41 +67,16 @@ void Calculate::calculateNumberInput(const int &singleDigitInput)
     
     if(decimalPointFlag == false)
     {
-        operandOne *= 10;
-        operandOne += temporary;
+        total *= 10;
+        total += temporary;
     }
     
     else
     {
         dividingNumberForDecimalPlace *= 10;
         temporary /= dividingNumberForDecimalPlace;
-        operandOne += temporary;
+        total += temporary;
     }
-    
-    // Temp
-    total = operandOne;
-}
-
-/**************************************************/
-
-void Calculate::add(const double &input)
-{
-    total += input;
-}
-
-void Calculate::subtract(const double &input)
-{
-    total -= input;
-}
-
-void Calculate::multiply(const double &input)
-{
-    total *= input;
-}
-
-void Calculate::divide(const double &input)
-{
-    total /= input;
 }
 
 /**************************************************/
@@ -105,11 +84,6 @@ void Calculate::divide(const double &input)
 void Calculate::setOperandOne(const double &input)
 {
     operandOne = input;
-}
-
-void Calculate::setOperandTwo(const double &input)
-{
-    operandTwo = input;
 }
 
 void Calculate::setStorageA(const double &input)
@@ -135,4 +109,10 @@ void Calculate::setDecimalPointFlag(const bool &trueOrFalse)
 double Calculate::getTotalValue()
 {
     return total;
+}
+
+void Calculate::transferTotalToOperand()
+{
+    operandOne = total;
+    clearTotal();
 }
