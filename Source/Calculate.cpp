@@ -33,7 +33,7 @@ void Calculate::basicClear()
     resetToNonDecimalNumberInput();
 }
 
-// Used by constructor and when holding down the clear button for 3+ seconds
+// Used by constructor and when clear is pressed while func is being held down
 void Calculate::advancedClear()
 {
     basicClear();

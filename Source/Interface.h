@@ -77,7 +77,7 @@ private:
     ScopedPointer<TextButton> minus;
     ScopedPointer<TextButton> multiply;
     ScopedPointer<TextButton> divide;
-    ScopedPointer<TextButton> set;
+    ScopedPointer<TextButton> function;
     ScopedPointer<TextButton> setA;
     ScopedPointer<TextButton> setB;
     ScopedPointer<TextButton> clear;

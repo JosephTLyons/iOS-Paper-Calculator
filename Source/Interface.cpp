@@ -121,10 +121,12 @@ Interface::Interface ()
     divide->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     divide->addListener (this);
 
-    addAndMakeVisible (set = new TextButton ("set"));
-    set->setButtonText (TRANS("SET"));
-    set->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
-    set->addListener (this);
+    addAndMakeVisible (function = new TextButton ("function"));
+    function->setButtonText (TRANS("FUNC"));
+    function->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    function->addListener (this);
+    function->setColour (TextButton::buttonOnColourId, Colour (0xff858585));
+    function->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (setA = new TextButton ("setA"));
     setA->setButtonText (TRANS("A"));
@@ -151,7 +153,7 @@ Interface::Interface ()
     //[Constructor] You can add your own custom stuff here..
 
     // Make set button a toggle button
-    set->setClickingTogglesState(true);
+    function->setClickingTogglesState(true);
 
     // Set initial value to output
     output->setText((String) calculateObject.getTotalValue());
@@ -181,7 +183,7 @@ Interface::~Interface()
     minus = nullptr;
     multiply = nullptr;
     divide = nullptr;
-    set = nullptr;
+    function = nullptr;
     setA = nullptr;
     setB = nullptr;
     clear = nullptr;
@@ -225,7 +227,7 @@ void Interface::resized()
     minus->setBounds (240, 328, 80, 80);
     multiply->setBounds (240, 248, 80, 80);
     divide->setBounds (240, 168, 80, 80);
-    set->setBounds (160, 168, 80, 80);
+    function->setBounds (160, 168, 80, 80);
     setA->setBounds (0, 168, 80, 80);
     setB->setBounds (80, 168, 80, 80);
     clear->setBounds (240, 488, 80, 80);
@@ -250,9 +252,9 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == decimalPoint)
     {
         //[UserButtonCode_decimalPoint] -- add your button handler code here..
-        
+
         calculateObject.setDecimalPointFlag(true);
-        
+
         //[/UserButtonCode_decimalPoint]
     }
     else if (buttonThatWasClicked == equals)
@@ -377,38 +379,47 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_divide]
     }
-    else if (buttonThatWasClicked == set)
+    else if (buttonThatWasClicked == function)
     {
-        //[UserButtonCode_set] -- add your button handler code here..
-        //[/UserButtonCode_set]
+        //[UserButtonCode_function] -- add your button handler code here..
+        //[/UserButtonCode_function]
     }
     else if (buttonThatWasClicked == setA)
     {
         //[UserButtonCode_setA] -- add your button handler code here..
-        
-        if(set->getToggleState())
+
+        if(function->getToggleState())
         {
             calculateObject.setStorageA();
         }
-        
+
         //[/UserButtonCode_setA]
     }
     else if (buttonThatWasClicked == setB)
     {
         //[UserButtonCode_setB] -- add your button handler code here..
-        
-        if(set->getToggleState())
+
+        if(function->getToggleState())
         {
             calculateObject.setStorageB();
         }
-        
+
         //[/UserButtonCode_setB]
     }
     else if (buttonThatWasClicked == clear)
     {
         //[UserButtonCode_clear] -- add your button handler code here..
 
-        calculateObject.basicClear();
+        if(function->getToggleState())
+        {
+            calculateObject.advancedClear();
+        }
+        
+        else
+        {
+            calculateObject.basicClear();
+        }
+        
         output->setText((String) calculateObject.getOperandOne());
 
         //[/UserButtonCode_clear]
@@ -493,9 +504,10 @@ BEGIN_JUCER_METADATA
   <TEXTBUTTON name="divide" id="e1847e3bb1546dd7" memberName="divide" virtualName=""
               explicitFocusOrder="0" pos="240 168 80 80" buttonText="/" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="set" id="75edee8fa483a117" memberName="set" virtualName=""
-              explicitFocusOrder="0" pos="160 168 80 80" buttonText="SET" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="function" id="75edee8fa483a117" memberName="function" virtualName=""
+              explicitFocusOrder="0" pos="160 168 80 80" bgColOn="ff858585"
+              textColOn="ff000000" buttonText="FUNC" connectedEdges="12" needsCallback="1"
+              radioGroupId="0"/>
   <TEXTBUTTON name="setA" id="8165831a8eddd1a0" memberName="setA" virtualName=""
               explicitFocusOrder="0" pos="0 168 80 80" buttonText="A" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
