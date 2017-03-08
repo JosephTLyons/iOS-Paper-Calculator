@@ -44,6 +44,8 @@ public:
     void calculateNumberInput(const int &singleDigitInput);
     
     void setDecimalPointFlag(const bool &trueOrFalse);
+    void setStorageA(const int &input);
+    void setStorageB(const int &input);
     
     double getOperandOne();
     double getTotalValue();

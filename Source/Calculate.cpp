@@ -102,6 +102,16 @@ void Calculate::setDecimalPointFlag(const bool &trueOrFalse)
     decimalPointFlag = trueOrFalse;
 }
 
+void Calculate::setStorageA(const int &input)
+{
+    storageA = total;
+}
+
+void Calculate::setStorageB(const int &input)
+{
+    storageB = total;
+}
+
 double Calculate::getOperandOne()
 {
     return operandOne;
