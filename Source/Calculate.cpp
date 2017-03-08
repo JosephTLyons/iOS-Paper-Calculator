@@ -15,9 +15,9 @@ Calculate::Calculate()
 
 /**************************************************/
 
-void Calculate::clearTotal()
+void Calculate::clearOperand()
 {
-    total = 0;
+    operandOne = 0;
 }
 
 void Calculate::resetToNonDecimalNumberInput()
@@ -28,8 +28,8 @@ void Calculate::resetToNonDecimalNumberInput()
 
 void Calculate::basicClear()
 {
-    clearTotal();
-    operandOne                    = 0;
+    total = 0;
+    clearOperand();
     resetToNonDecimalNumberInput();
 }
 
@@ -68,7 +68,7 @@ void Calculate::performCalculation()
 void Calculate::executeOperation(const int &input)
 {
     setOperationChosen(input);
-    transferTotalToOperand();
+    transferOperandToTotal();
     resetToNonDecimalNumberInput();
 }
 
@@ -78,15 +78,15 @@ void Calculate::calculateNumberInput(const int &singleDigitInput)
     
     if(decimalPointFlag == false)
     {
-        total *= 10;
-        total += temporary;
+        operandOne *= 10;
+        operandOne += temporary;
     }
     
     else
     {
         dividingNumberForDecimalPlace *= 10;
         temporary /= dividingNumberForDecimalPlace;
-        total += temporary;
+        operandOne += temporary;
     }
 }
 
@@ -102,13 +102,18 @@ void Calculate::setDecimalPointFlag(const bool &trueOrFalse)
     decimalPointFlag = trueOrFalse;
 }
 
+double Calculate::getOperandOne()
+{
+    return operandOne;
+}
+
 double Calculate::getTotalValue()
 {
     return total;
 }
 
-void Calculate::transferTotalToOperand()
+void Calculate::transferOperandToTotal()
 {
-    operandOne = total;
-    clearTotal();
+    total = operandOne;
+    clearOperand();
 }

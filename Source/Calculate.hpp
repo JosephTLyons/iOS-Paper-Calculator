@@ -27,10 +27,10 @@ private:
     bool decimalPointFlag;
     double dividingNumberForDecimalPlace;
     
-    void clearTotal();
+    void clearOperand();
     void resetToNonDecimalNumberInput();
     void setOperationChosen(const int &input);
-    void transferTotalToOperand();
+    void transferOperandToTotal();
     
 public:
     
@@ -45,6 +45,7 @@ public:
     
     void setDecimalPointFlag(const bool &trueOrFalse);
     
+    double getOperandOne();
     double getTotalValue();
 };
 
