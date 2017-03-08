@@ -128,3 +128,8 @@ void Calculate::setDecimalPointFlag(const bool &trueOrFalse)
 {
     decimalPointFlag = trueOrFalse;
 }
+
+double Calculate::getTotalValue()
+{
+    return total;
+}

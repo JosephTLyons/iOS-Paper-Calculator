@@ -48,6 +48,8 @@ public:
     void setStorageB(const double &input);
     void setOperationChosen(const int &input);
     void setDecimalPointFlag(const bool &trueOrFalse);
+    
+    double getTotalValue();
 };
 
 #endif /* Calculate_hpp */

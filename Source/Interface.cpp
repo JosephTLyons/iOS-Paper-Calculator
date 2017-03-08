@@ -32,14 +32,14 @@ Interface::Interface ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    addAndMakeVisible (textEditor = new TextEditor ("new text editor"));
-    textEditor->setMultiLine (false);
-    textEditor->setReturnKeyStartsNewLine (false);
-    textEditor->setReadOnly (false);
-    textEditor->setScrollbarsShown (true);
-    textEditor->setCaretVisible (true);
-    textEditor->setPopupMenuEnabled (true);
-    textEditor->setText (String());
+    addAndMakeVisible (output = new TextEditor ("new text editor"));
+    output->setMultiLine (false);
+    output->setReturnKeyStartsNewLine (false);
+    output->setReadOnly (false);
+    output->setScrollbarsShown (true);
+    output->setCaretVisible (true);
+    output->setPopupMenuEnabled (true);
+    output->setText (String());
 
     addAndMakeVisible (zero = new TextButton ("zero"));
     zero->setButtonText (TRANS("0"));
@@ -147,6 +147,9 @@ Interface::Interface ()
 
     // Make set button a toggle button
     set->setClickingTogglesState(true);
+    
+    // Set initial value to output
+    output->setText((String) calculateObject.getTotalValue());
 
     //[/Constructor]
 }
@@ -156,7 +159,7 @@ Interface::~Interface()
     //[Destructor_pre]. You can add your own custom destruction code here..
     //[/Destructor_pre]
 
-    textEditor = nullptr;
+    output = nullptr;
     zero = nullptr;
     decimalPoint = nullptr;
     equals = nullptr;
@@ -199,7 +202,7 @@ void Interface::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    textEditor->setBounds (0, 96, 320, 72);
+    output->setBounds (0, 96, 320, 72);
     zero->setBounds (0, 488, 80, 80);
     decimalPoint->setBounds (80, 488, 80, 80);
     equals->setBounds (160, 488, 80, 80);
@@ -325,6 +328,10 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     }
 
     //[UserbuttonClicked_Post]
+
+    // Set new value to output
+    output->setText((String) calculateObject.getTotalValue());
+
     //[/UserbuttonClicked_Post]
 }
 
@@ -348,7 +355,7 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="1" initialWidth="320" initialHeight="568">
   <BACKGROUND backgroundColour="ff1f1f1f"/>
-  <TEXTEDITOR name="new text editor" id="ef90af45fd38f38d" memberName="textEditor"
+  <TEXTEDITOR name="new text editor" id="ef90af45fd38f38d" memberName="output"
               virtualName="" explicitFocusOrder="0" pos="0 96 320 72" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
