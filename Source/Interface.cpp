@@ -164,14 +164,14 @@ Interface::Interface ()
     //[Constructor] You can add your own custom stuff here..
 
     // Make set button a toggle button
-    function->setClickingTogglesState(true)
-    ;
+    function->setClickingTogglesState(true);
 
     // Set initial value to output
     output->setText((String) calculateObject.getTotalValue());
 
-    texEditorFont.setSizeAndStyle(50, normal, 1, 0);
-    output->setFont(texEditorFont);
+    // Make a new font object and pass into output textEditor
+    textEditorFont.setSizeAndStyle(50, normal, 1, 0);
+    output->setFont(textEditorFont);
 
     //[/Constructor]
 }
