@@ -32,13 +32,15 @@ Interface::Interface ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    addAndMakeVisible (output = new TextEditor ("new text editor"));
+    addAndMakeVisible (output = new TextEditor ("output"));
     output->setMultiLine (false);
     output->setReturnKeyStartsNewLine (false);
     output->setReadOnly (false);
     output->setScrollbarsShown (true);
     output->setCaretVisible (true);
     output->setPopupMenuEnabled (true);
+    output->setColour (TextEditor::textColourId, Colours::white);
+    output->setColour (TextEditor::backgroundColourId, Colour (0xff1f1f1f));
     output->setText (String());
 
     addAndMakeVisible (zero = new TextButton ("zero"));
@@ -143,6 +145,15 @@ Interface::Interface ()
     clear->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     clear->addListener (this);
 
+    addAndMakeVisible (calcLabel = new Label ("calcLabel",
+                                              TRANS("Paper Calculator")));
+    calcLabel->setFont (Font ("Angryblue  Controlled", 87.00f, Font::plain));
+    calcLabel->setJustificationType (Justification::centred);
+    calcLabel->setEditable (false, false, false);
+    calcLabel->setColour (Label::textColourId, Colours::white);
+    calcLabel->setColour (TextEditor::textColourId, Colours::black);
+    calcLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -153,10 +164,14 @@ Interface::Interface ()
     //[Constructor] You can add your own custom stuff here..
 
     // Make set button a toggle button
-    function->setClickingTogglesState(true);
+    function->setClickingTogglesState(true)
+    ;
 
     // Set initial value to output
     output->setText((String) calculateObject.getTotalValue());
+
+    texEditorFont.setSizeAndStyle(50, normal, 1, 0);
+    output->setFont(texEditorFont);
 
     //[/Constructor]
 }
@@ -187,6 +202,7 @@ Interface::~Interface()
     setA = nullptr;
     setB = nullptr;
     clear = nullptr;
+    calcLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -231,6 +247,7 @@ void Interface::resized()
     setA->setBounds (0, 168, 80, 80);
     setB->setBounds (80, 168, 80, 80);
     clear->setBounds (240, 488, 80, 80);
+    calcLabel->setBounds (0, 24, 320, 80);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -238,16 +255,16 @@ void Interface::resized()
 void Interface::buttonClicked (Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
-    
+
     static bool isFunctionToggleActivated = false;
-    
+
     // Turn off function, if its own, upon next button press
     if(isFunctionToggleActivated)
     {
         function->setToggleState(false, dontSendNotification);
         isFunctionToggleActivated = false;
     }
-    
+
     //[/UserbuttonClicked_Pre]
 
     if (buttonThatWasClicked == zero)
@@ -392,9 +409,9 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == function)
     {
         //[UserButtonCode_function] -- add your button handler code here..
-        
+
         isFunctionToggleActivated = true;
-        
+
         //[/UserButtonCode_function]
     }
     else if (buttonThatWasClicked == setA)
@@ -427,12 +444,12 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         {
             calculateObject.advancedClear();
         }
-        
+
         else
         {
             calculateObject.basicClear();
         }
-        
+
         output->setText((String) calculateObject.getOperandOne());
 
         //[/UserButtonCode_clear]
@@ -462,10 +479,10 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="1" initialWidth="320" initialHeight="568">
   <BACKGROUND backgroundColour="ff1f1f1f"/>
-  <TEXTEDITOR name="new text editor" id="ef90af45fd38f38d" memberName="output"
-              virtualName="" explicitFocusOrder="0" pos="0 96 320 72" initialText=""
-              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
-              caret="1" popupmenu="1"/>
+  <TEXTEDITOR name="output" id="ef90af45fd38f38d" memberName="output" virtualName=""
+              explicitFocusOrder="0" pos="0 96 320 72" textcol="ffffffff" bkgcol="ff1f1f1f"
+              initialText="" multiline="0" retKeyStartsLine="0" readonly="0"
+              scrollbars="1" caret="1" popupmenu="1"/>
   <TEXTBUTTON name="zero" id="f19566c64d00a477" memberName="zero" virtualName=""
               explicitFocusOrder="0" pos="0 488 80 80" buttonText="0" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
@@ -527,6 +544,12 @@ BEGIN_JUCER_METADATA
   <TEXTBUTTON name="clear" id="b6484fd5b491bd9b" memberName="clear" virtualName=""
               explicitFocusOrder="0" pos="240 488 80 80" buttonText="Clear"
               connectedEdges="12" needsCallback="1" radioGroupId="0"/>
+  <LABEL name="calcLabel" id="7648bb610c523783" memberName="calcLabel"
+         virtualName="" explicitFocusOrder="0" pos="0 24 320 80" textCol="ffffffff"
+         edTextCol="ff000000" edBkgCol="0" labelText="Paper Calculator"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Angryblue  Controlled" fontsize="87" bold="0" italic="0"
+         justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

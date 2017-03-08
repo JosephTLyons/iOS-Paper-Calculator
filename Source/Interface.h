@@ -56,6 +56,7 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
     Calculate calculateObject;
+    Font texEditorFont;
 
     //[/UserVariables]
 
@@ -81,6 +82,7 @@ private:
     ScopedPointer<TextButton> setA;
     ScopedPointer<TextButton> setB;
     ScopedPointer<TextButton> clear;
+    ScopedPointer<Label> calcLabel;
 
 
     //==============================================================================
