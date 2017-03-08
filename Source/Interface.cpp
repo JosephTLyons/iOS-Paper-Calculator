@@ -156,7 +156,7 @@ Interface::Interface ()
 
     addAndMakeVisible (calcLabel = new Label ("calcLabel",
                                               TRANS("Paper Calculator")));
-    calcLabel->setFont (Font ("Angryblue  Controlled", 87.00f, Font::plain));
+    calcLabel->setFont (Font ("Brush Script MT", 72.90f, Font::plain));
     calcLabel->setJustificationType (Justification::centred);
     calcLabel->setEditable (false, false, false);
     calcLabel->setColour (Label::textColourId, Colours::white);
@@ -557,8 +557,8 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 24 320 80" textCol="ffffffff"
          edTextCol="ff000000" edBkgCol="0" labelText="Paper Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Angryblue  Controlled" fontsize="87" bold="0" italic="0"
-         justification="36"/>
+         fontname="Brush Script MT" fontsize="72.900000000000005684" bold="0"
+         italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
