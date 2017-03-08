@@ -49,6 +49,7 @@
       <FILE id="aHc2rV" name="Subtract-Up.jpg" compile="0" resource="1" file="Buttons Original Size/Subtract-Up.jpg"/>
     </GROUP>
     <GROUP id="{16931959-C132-A5B9-90A9-1E12B6A306AA}" name="Source">
+      <FILE id="B0OVJK" name="BugLog.txt" compile="0" resource="1" file="BugLog.txt"/>
       <FILE id="EPKMVN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="HmotYd" name="Interface.h" compile="0" resource="0" file="Source/Interface.h"/>
       <FILE id="iQiVkF" name="Interface.cpp" compile="1" resource="0" file="Source/Interface.cpp"/>

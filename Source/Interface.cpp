@@ -385,11 +385,23 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == setA)
     {
         //[UserButtonCode_setA] -- add your button handler code here..
+        
+        if(set->getToggleState())
+        {
+            calculateObject.setStorageA();
+        }
+        
         //[/UserButtonCode_setA]
     }
     else if (buttonThatWasClicked == setB)
     {
         //[UserButtonCode_setB] -- add your button handler code here..
+        
+        if(set->getToggleState())
+        {
+            calculateObject.setStorageB();
+        }
+        
         //[/UserButtonCode_setB]
     }
     else if (buttonThatWasClicked == clear)

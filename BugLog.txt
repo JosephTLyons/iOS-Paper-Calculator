@@ -1,0 +1,5 @@
+1) Performing a single calculation, then performing another using another operator on the last total doesn't work.  When switching operators, the value stored in operand is moved to total, which is causing the issue.
+
+2) Logic for setting storage isn't correct.  This has to due with the current logic of showing two different outputs (operand and total) to the editor.  Rework logic so that total is the only one being shown (like in the first version), so that the total is always whats being show (except when typing in a new number, which will be displayed), then just store total in storage.
+
+3) Precision when working with some floats is incorrect (under the hood?).
