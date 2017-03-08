@@ -57,11 +57,13 @@ Interface::Interface ()
     equals->setButtonText (TRANS("="));
     equals->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     equals->addListener (this);
+    equals->setColour (TextButton::buttonColourId, Colour (0xff2de97a));
 
     addAndMakeVisible (plus = new TextButton ("plus"));
     plus->setButtonText (TRANS("+"));
     plus->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     plus->addListener (this);
+    plus->setColour (TextButton::buttonColourId, Colours::aqua);
 
     addAndMakeVisible (one = new TextButton ("one"));
     one->setButtonText (TRANS("1"));
@@ -112,38 +114,45 @@ Interface::Interface ()
     minus->setButtonText (TRANS("-"));
     minus->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     minus->addListener (this);
+    minus->setColour (TextButton::buttonColourId, Colours::aqua);
 
     addAndMakeVisible (multiply = new TextButton ("multiply"));
     multiply->setButtonText (TRANS("X"));
     multiply->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     multiply->addListener (this);
+    multiply->setColour (TextButton::buttonColourId, Colours::aqua);
 
     addAndMakeVisible (divide = new TextButton ("divide"));
     divide->setButtonText (TRANS("/"));
     divide->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     divide->addListener (this);
+    divide->setColour (TextButton::buttonColourId, Colours::aqua);
 
     addAndMakeVisible (function = new TextButton ("function"));
     function->setButtonText (TRANS("FUNC"));
     function->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     function->addListener (this);
-    function->setColour (TextButton::buttonOnColourId, Colour (0xff858585));
+    function->setColour (TextButton::buttonColourId, Colours::crimson);
+    function->setColour (TextButton::buttonOnColourId, Colours::brown);
     function->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (setA = new TextButton ("setA"));
     setA->setButtonText (TRANS("A"));
     setA->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     setA->addListener (this);
+    setA->setColour (TextButton::buttonColourId, Colours::crimson);
 
     addAndMakeVisible (setB = new TextButton ("setB"));
     setB->setButtonText (TRANS("B"));
     setB->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     setB->addListener (this);
+    setB->setColour (TextButton::buttonColourId, Colours::crimson);
 
     addAndMakeVisible (clear = new TextButton ("clear"));
     clear->setButtonText (TRANS("Clear"));
     clear->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     clear->addListener (this);
+    clear->setColour (TextButton::buttonColourId, Colours::crimson);
 
     addAndMakeVisible (calcLabel = new Label ("calcLabel",
                                               TRANS("Paper Calculator")));
@@ -490,11 +499,11 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="80 488 80 80" buttonText="."
               connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="equals" id="45169ab5194b6581" memberName="equals" virtualName=""
-              explicitFocusOrder="0" pos="160 488 80 80" buttonText="=" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="160 488 80 80" bgColOff="ff2de97a"
+              buttonText="=" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="plus" id="b020b4abf9fd0751" memberName="plus" virtualName=""
-              explicitFocusOrder="0" pos="240 408 80 80" buttonText="+" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="240 408 80 80" bgColOff="ff00ffff"
+              buttonText="+" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="one" id="15e81326eba0e0cf" memberName="one" virtualName=""
               explicitFocusOrder="0" pos="0 408 80 80" buttonText="1" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
@@ -523,27 +532,27 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="160 248 80 80" buttonText="9" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="minus" id="ec24c1b3de1f2aae" memberName="minus" virtualName=""
-              explicitFocusOrder="0" pos="240 328 80 80" buttonText="-" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="240 328 80 80" bgColOff="ff00ffff"
+              buttonText="-" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="multiply" id="f5beeca49d4742cc" memberName="multiply" virtualName=""
-              explicitFocusOrder="0" pos="240 248 80 80" buttonText="X" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="240 248 80 80" bgColOff="ff00ffff"
+              buttonText="X" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="divide" id="e1847e3bb1546dd7" memberName="divide" virtualName=""
-              explicitFocusOrder="0" pos="240 168 80 80" buttonText="/" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="240 168 80 80" bgColOff="ff00ffff"
+              buttonText="/" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="function" id="75edee8fa483a117" memberName="function" virtualName=""
-              explicitFocusOrder="0" pos="160 168 80 80" bgColOn="ff858585"
-              textColOn="ff000000" buttonText="FUNC" connectedEdges="12" needsCallback="1"
-              radioGroupId="0"/>
+              explicitFocusOrder="0" pos="160 168 80 80" bgColOff="ffdc143c"
+              bgColOn="ffa52a2a" textColOn="ff000000" buttonText="FUNC" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="setA" id="8165831a8eddd1a0" memberName="setA" virtualName=""
-              explicitFocusOrder="0" pos="0 168 80 80" buttonText="A" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="0 168 80 80" bgColOff="ffdc143c"
+              buttonText="A" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="setB" id="845f3f0ecd702467" memberName="setB" virtualName=""
-              explicitFocusOrder="0" pos="80 168 80 80" buttonText="B" connectedEdges="12"
-              needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="80 168 80 80" bgColOff="ffdc143c"
+              buttonText="B" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="clear" id="b6484fd5b491bd9b" memberName="clear" virtualName=""
-              explicitFocusOrder="0" pos="240 488 80 80" buttonText="Clear"
-              connectedEdges="12" needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="240 488 80 80" bgColOff="ffdc143c"
+              buttonText="Clear" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <LABEL name="calcLabel" id="7648bb610c523783" memberName="calcLabel"
          virtualName="" explicitFocusOrder="0" pos="0 24 320 80" textCol="ffffffff"
          edTextCol="ff000000" edBkgCol="0" labelText="Paper Calculator"
