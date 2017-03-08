@@ -1,0 +1,420 @@
+/*
+  ==============================================================================
+
+  This is an automatically generated GUI class created by the Projucer!
+
+  Be careful when adding custom code to these files, as only the code within
+  the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
+  and re-saved.
+
+  Created with Projucer version: 4.3.1
+
+  ------------------------------------------------------------------------------
+
+  The Projucer is part of the JUCE library - "Jules' Utility Class Extensions"
+  Copyright (c) 2015 - ROLI Ltd.
+
+  ==============================================================================
+*/
+
+//[Headers] You can add your own extra header files here...
+//[/Headers]
+
+#include "Interface.h"
+
+
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
+
+//==============================================================================
+Interface::Interface ()
+{
+    //[Constructor_pre] You can add your own custom stuff here..
+    //[/Constructor_pre]
+
+    addAndMakeVisible (textEditor = new TextEditor ("new text editor"));
+    textEditor->setMultiLine (false);
+    textEditor->setReturnKeyStartsNewLine (false);
+    textEditor->setReadOnly (false);
+    textEditor->setScrollbarsShown (true);
+    textEditor->setCaretVisible (true);
+    textEditor->setPopupMenuEnabled (true);
+    textEditor->setText (String());
+
+    addAndMakeVisible (zero = new TextButton ("zero"));
+    zero->setButtonText (TRANS("0"));
+    zero->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    zero->addListener (this);
+
+    addAndMakeVisible (decimalPoint = new TextButton ("decimalPoint"));
+    decimalPoint->setButtonText (TRANS("."));
+    decimalPoint->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    decimalPoint->addListener (this);
+
+    addAndMakeVisible (equals = new TextButton ("equals"));
+    equals->setButtonText (TRANS("="));
+    equals->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    equals->addListener (this);
+
+    addAndMakeVisible (plus = new TextButton ("plus"));
+    plus->setButtonText (TRANS("+"));
+    plus->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    plus->addListener (this);
+
+    addAndMakeVisible (one = new TextButton ("one"));
+    one->setButtonText (TRANS("1"));
+    one->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    one->addListener (this);
+
+    addAndMakeVisible (two = new TextButton ("two"));
+    two->setButtonText (TRANS("2"));
+    two->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    two->addListener (this);
+
+    addAndMakeVisible (three = new TextButton ("three"));
+    three->setButtonText (TRANS("3"));
+    three->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    three->addListener (this);
+
+    addAndMakeVisible (four = new TextButton ("four"));
+    four->setButtonText (TRANS("4"));
+    four->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    four->addListener (this);
+
+    addAndMakeVisible (five = new TextButton ("five"));
+    five->setButtonText (TRANS("5"));
+    five->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    five->addListener (this);
+
+    addAndMakeVisible (six = new TextButton ("six"));
+    six->setButtonText (TRANS("6"));
+    six->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    six->addListener (this);
+
+    addAndMakeVisible (seven = new TextButton ("seven"));
+    seven->setButtonText (TRANS("7"));
+    seven->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    seven->addListener (this);
+
+    addAndMakeVisible (eight = new TextButton ("eight"));
+    eight->setButtonText (TRANS("8"));
+    eight->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    eight->addListener (this);
+
+    addAndMakeVisible (nine = new TextButton ("nine"));
+    nine->setButtonText (TRANS("9"));
+    nine->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    nine->addListener (this);
+
+    addAndMakeVisible (minus = new TextButton ("minus"));
+    minus->setButtonText (TRANS("-"));
+    minus->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    minus->addListener (this);
+
+    addAndMakeVisible (multiply = new TextButton ("multiply"));
+    multiply->setButtonText (TRANS("X"));
+    multiply->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    multiply->addListener (this);
+
+    addAndMakeVisible (divide = new TextButton ("divide"));
+    divide->setButtonText (TRANS("/"));
+    divide->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    divide->addListener (this);
+
+    addAndMakeVisible (set = new TextButton ("set"));
+    set->setButtonText (TRANS("SET"));
+    set->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    set->addListener (this);
+
+    addAndMakeVisible (setA = new TextButton ("setA"));
+    setA->setButtonText (TRANS("A"));
+    setA->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    setA->addListener (this);
+
+    addAndMakeVisible (setB = new TextButton ("setB"));
+    setB->setButtonText (TRANS("B"));
+    setB->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    setB->addListener (this);
+
+
+    //[UserPreSize]
+    //[/UserPreSize]
+
+    setSize (320, 568);
+
+
+    //[Constructor] You can add your own custom stuff here..
+
+    // Make set button a toggle button
+    set->setClickingTogglesState(true);
+
+    //[/Constructor]
+}
+
+Interface::~Interface()
+{
+    //[Destructor_pre]. You can add your own custom destruction code here..
+    //[/Destructor_pre]
+
+    textEditor = nullptr;
+    zero = nullptr;
+    decimalPoint = nullptr;
+    equals = nullptr;
+    plus = nullptr;
+    one = nullptr;
+    two = nullptr;
+    three = nullptr;
+    four = nullptr;
+    five = nullptr;
+    six = nullptr;
+    seven = nullptr;
+    eight = nullptr;
+    nine = nullptr;
+    minus = nullptr;
+    multiply = nullptr;
+    divide = nullptr;
+    set = nullptr;
+    setA = nullptr;
+    setB = nullptr;
+
+
+    //[Destructor]. You can add your own custom destruction code here..
+    //[/Destructor]
+}
+
+//==============================================================================
+void Interface::paint (Graphics& g)
+{
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
+
+    g.fillAll (Colour (0xff1f1f1f));
+
+    //[UserPaint] Add your own custom painting code here..
+    //[/UserPaint]
+}
+
+void Interface::resized()
+{
+    //[UserPreResize] Add your own custom resize code here..
+    //[/UserPreResize]
+
+    textEditor->setBounds (0, 96, 320, 72);
+    zero->setBounds (0, 488, 80, 80);
+    decimalPoint->setBounds (80, 488, 80, 80);
+    equals->setBounds (160, 488, 80, 80);
+    plus->setBounds (240, 488, 80, 80);
+    one->setBounds (0, 408, 80, 80);
+    two->setBounds (80, 408, 80, 80);
+    three->setBounds (160, 408, 80, 80);
+    four->setBounds (0, 328, 80, 80);
+    five->setBounds (80, 328, 80, 80);
+    six->setBounds (160, 328, 80, 80);
+    seven->setBounds (0, 248, 80, 80);
+    eight->setBounds (80, 248, 80, 80);
+    nine->setBounds (160, 248, 80, 80);
+    minus->setBounds (240, 408, 80, 80);
+    multiply->setBounds (240, 328, 80, 80);
+    divide->setBounds (240, 248, 80, 80);
+    set->setBounds (160, 168, 160, 80);
+    setA->setBounds (0, 168, 80, 80);
+    setB->setBounds (80, 168, 80, 80);
+    //[UserResized] Add your own custom resize handling here..
+    //[/UserResized]
+}
+
+void Interface::buttonClicked (Button* buttonThatWasClicked)
+{
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
+    if (buttonThatWasClicked == zero)
+    {
+        //[UserButtonCode_zero] -- add your button handler code here..
+        //[/UserButtonCode_zero]
+    }
+    else if (buttonThatWasClicked == decimalPoint)
+    {
+        //[UserButtonCode_decimalPoint] -- add your button handler code here..
+        //[/UserButtonCode_decimalPoint]
+    }
+    else if (buttonThatWasClicked == equals)
+    {
+        //[UserButtonCode_equals] -- add your button handler code here..
+        //[/UserButtonCode_equals]
+    }
+    else if (buttonThatWasClicked == plus)
+    {
+        //[UserButtonCode_plus] -- add your button handler code here..
+        //[/UserButtonCode_plus]
+    }
+    else if (buttonThatWasClicked == one)
+    {
+        //[UserButtonCode_one] -- add your button handler code here..
+        //[/UserButtonCode_one]
+    }
+    else if (buttonThatWasClicked == two)
+    {
+        //[UserButtonCode_two] -- add your button handler code here..
+        //[/UserButtonCode_two]
+    }
+    else if (buttonThatWasClicked == three)
+    {
+        //[UserButtonCode_three] -- add your button handler code here..
+        //[/UserButtonCode_three]
+    }
+    else if (buttonThatWasClicked == four)
+    {
+        //[UserButtonCode_four] -- add your button handler code here..
+        //[/UserButtonCode_four]
+    }
+    else if (buttonThatWasClicked == five)
+    {
+        //[UserButtonCode_five] -- add your button handler code here..
+        //[/UserButtonCode_five]
+    }
+    else if (buttonThatWasClicked == six)
+    {
+        //[UserButtonCode_six] -- add your button handler code here..
+        //[/UserButtonCode_six]
+    }
+    else if (buttonThatWasClicked == seven)
+    {
+        //[UserButtonCode_seven] -- add your button handler code here..
+        //[/UserButtonCode_seven]
+    }
+    else if (buttonThatWasClicked == eight)
+    {
+        //[UserButtonCode_eight] -- add your button handler code here..
+        //[/UserButtonCode_eight]
+    }
+    else if (buttonThatWasClicked == nine)
+    {
+        //[UserButtonCode_nine] -- add your button handler code here..
+        //[/UserButtonCode_nine]
+    }
+    else if (buttonThatWasClicked == minus)
+    {
+        //[UserButtonCode_minus] -- add your button handler code here..
+        //[/UserButtonCode_minus]
+    }
+    else if (buttonThatWasClicked == multiply)
+    {
+        //[UserButtonCode_multiply] -- add your button handler code here..
+        //[/UserButtonCode_multiply]
+    }
+    else if (buttonThatWasClicked == divide)
+    {
+        //[UserButtonCode_divide] -- add your button handler code here..
+        //[/UserButtonCode_divide]
+    }
+    else if (buttonThatWasClicked == set)
+    {
+        //[UserButtonCode_set] -- add your button handler code here..
+        //[/UserButtonCode_set]
+    }
+    else if (buttonThatWasClicked == setA)
+    {
+        //[UserButtonCode_setA] -- add your button handler code here..
+        //[/UserButtonCode_setA]
+    }
+    else if (buttonThatWasClicked == setB)
+    {
+        //[UserButtonCode_setB] -- add your button handler code here..
+        //[/UserButtonCode_setB]
+    }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
+}
+
+
+
+//[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+//[/MiscUserCode]
+
+
+//==============================================================================
+#if 0
+/*  -- Projucer information section --
+
+    This is where the Projucer stores the metadata that describe this GUI layout, so
+    make changes in here at your peril!
+
+BEGIN_JUCER_METADATA
+
+<JUCER_COMPONENT documentType="Component" className="Interface" componentName=""
+                 parentClasses="public Component" constructorParams="" variableInitialisers=""
+                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
+                 fixedSize="1" initialWidth="320" initialHeight="568">
+  <BACKGROUND backgroundColour="ff1f1f1f"/>
+  <TEXTEDITOR name="new text editor" id="ef90af45fd38f38d" memberName="textEditor"
+              virtualName="" explicitFocusOrder="0" pos="0 96 320 72" initialText=""
+              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
+              caret="1" popupmenu="1"/>
+  <TEXTBUTTON name="zero" id="f19566c64d00a477" memberName="zero" virtualName=""
+              explicitFocusOrder="0" pos="0 488 80 80" buttonText="0" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="decimalPoint" id="80357dcaa5141c0e" memberName="decimalPoint"
+              virtualName="" explicitFocusOrder="0" pos="80 488 80 80" buttonText="."
+              connectedEdges="12" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="equals" id="45169ab5194b6581" memberName="equals" virtualName=""
+              explicitFocusOrder="0" pos="160 488 80 80" buttonText="=" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="plus" id="b020b4abf9fd0751" memberName="plus" virtualName=""
+              explicitFocusOrder="0" pos="240 488 80 80" buttonText="+" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="one" id="15e81326eba0e0cf" memberName="one" virtualName=""
+              explicitFocusOrder="0" pos="0 408 80 80" buttonText="1" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="two" id="83ec8f83303690b6" memberName="two" virtualName=""
+              explicitFocusOrder="0" pos="80 408 80 80" buttonText="2" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="three" id="c847e501abcd5e83" memberName="three" virtualName=""
+              explicitFocusOrder="0" pos="160 408 80 80" buttonText="3" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="four" id="eecb82f667a16fd3" memberName="four" virtualName=""
+              explicitFocusOrder="0" pos="0 328 80 80" buttonText="4" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="five" id="658a51d2ff764315" memberName="five" virtualName=""
+              explicitFocusOrder="0" pos="80 328 80 80" buttonText="5" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="six" id="42cb445d3b11a17f" memberName="six" virtualName=""
+              explicitFocusOrder="0" pos="160 328 80 80" buttonText="6" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="seven" id="81bd3943e11f3c45" memberName="seven" virtualName=""
+              explicitFocusOrder="0" pos="0 248 80 80" buttonText="7" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="eight" id="e9c8f0d260946908" memberName="eight" virtualName=""
+              explicitFocusOrder="0" pos="80 248 80 80" buttonText="8" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="nine" id="2ee61b01632eb18c" memberName="nine" virtualName=""
+              explicitFocusOrder="0" pos="160 248 80 80" buttonText="9" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="minus" id="ec24c1b3de1f2aae" memberName="minus" virtualName=""
+              explicitFocusOrder="0" pos="240 408 80 80" buttonText="-" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="multiply" id="f5beeca49d4742cc" memberName="multiply" virtualName=""
+              explicitFocusOrder="0" pos="240 328 80 80" buttonText="X" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="divide" id="e1847e3bb1546dd7" memberName="divide" virtualName=""
+              explicitFocusOrder="0" pos="240 248 80 80" buttonText="/" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="set" id="75edee8fa483a117" memberName="set" virtualName=""
+              explicitFocusOrder="0" pos="160 168 160 80" buttonText="SET"
+              connectedEdges="12" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="setA" id="8165831a8eddd1a0" memberName="setA" virtualName=""
+              explicitFocusOrder="0" pos="0 168 80 80" buttonText="A" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="setB" id="845f3f0ecd702467" memberName="setB" virtualName=""
+              explicitFocusOrder="0" pos="80 168 80 80" buttonText="B" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
+</JUCER_COMPONENT>
+
+END_JUCER_METADATA
+*/
+#endif
+
+
+//[EndFile] You can add extra defines here...
+//[/EndFile]

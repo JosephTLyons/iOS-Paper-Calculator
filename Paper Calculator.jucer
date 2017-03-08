@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="tMq45k" name="Paper Calculator" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.PaperCalculator" includeBinaryInAppConfig="1"
+              jucerVersion="4.3.1">
+  <MAINGROUP id="MJ59RM" name="Paper Calculator">
+    <GROUP id="{3488F8F5-E616-965C-F1D9-3AEA6816AE38}" name="Buttons Original Size">
+      <FILE id="YEpnZH" name="0-Down.jpg" compile="0" resource="1" file="Buttons Original Size/0-Down.jpg"/>
+      <FILE id="Rg9UOx" name="0-Up.jpg" compile="0" resource="1" file="Buttons Original Size/0-Up.jpg"/>
+      <FILE id="pMFqNm" name="1-Down.jpg" compile="0" resource="1" file="Buttons Original Size/1-Down.jpg"/>
+      <FILE id="SDE1f8" name="1-Up.jpg" compile="0" resource="1" file="Buttons Original Size/1-Up.jpg"/>
+      <FILE id="jeqZ3U" name="2-Down.jpg" compile="0" resource="1" file="Buttons Original Size/2-Down.jpg"/>
+      <FILE id="ZwqTYp" name="2-Up.jpg" compile="0" resource="1" file="Buttons Original Size/2-Up.jpg"/>
+      <FILE id="w2Dcd4" name="3-Down.jpg" compile="0" resource="1" file="Buttons Original Size/3-Down.jpg"/>
+      <FILE id="ERSYUH" name="3-Up.jpg" compile="0" resource="1" file="Buttons Original Size/3-Up.jpg"/>
+      <FILE id="FLobpr" name="4-Down.jpg" compile="0" resource="1" file="Buttons Original Size/4-Down.jpg"/>
+      <FILE id="QNjQYY" name="4-Up.jpg" compile="0" resource="1" file="Buttons Original Size/4-Up.jpg"/>
+      <FILE id="JVC0Ip" name="5-Down.jpg" compile="0" resource="1" file="Buttons Original Size/5-Down.jpg"/>
+      <FILE id="BzvcWE" name="5-Up.jpg" compile="0" resource="1" file="Buttons Original Size/5-Up.jpg"/>
+      <FILE id="rZlivf" name="6-Down.jpg" compile="0" resource="1" file="Buttons Original Size/6-Down.jpg"/>
+      <FILE id="ZiuozM" name="6-Up.jpg" compile="0" resource="1" file="Buttons Original Size/6-Up.jpg"/>
+      <FILE id="au4qt6" name="7-Down.jpg" compile="0" resource="1" file="Buttons Original Size/7-Down.jpg"/>
+      <FILE id="bQb7Gz" name="7-Up.jpg" compile="0" resource="1" file="Buttons Original Size/7-Up.jpg"/>
+      <FILE id="xDJi3k" name="8-Down.jpg" compile="0" resource="1" file="Buttons Original Size/8-Down.jpg"/>
+      <FILE id="qc4gPl" name="8-Up.jpg" compile="0" resource="1" file="Buttons Original Size/8-Up.jpg"/>
+      <FILE id="nDnCxf" name="9-Down.jpg" compile="0" resource="1" file="Buttons Original Size/9-Down.jpg"/>
+      <FILE id="yYQBkC" name="9-Up.jpg" compile="0" resource="1" file="Buttons Original Size/9-Up.jpg"/>
+      <FILE id="jvV7Pn" name="A-Down.jpg" compile="0" resource="1" file="Buttons Original Size/A-Down.jpg"/>
+      <FILE id="etVMf0" name="A-Up.jpg" compile="0" resource="1" file="Buttons Original Size/A-Up.jpg"/>
+      <FILE id="UUEyjb" name="B-Down.jpg" compile="0" resource="1" file="Buttons Original Size/B-Down.jpg"/>
+      <FILE id="zBQGB3" name="B-Up.jpg" compile="0" resource="1" file="Buttons Original Size/B-Up.jpg"/>
+      <FILE id="jrJl6v" name="Divide-Down.jpg" compile="0" resource="1" file="Buttons Original Size/Divide-Down.jpg"/>
+      <FILE id="wBCenW" name="Divide-Up.jpg" compile="0" resource="1" file="Buttons Original Size/Divide-Up.jpg"/>
+      <FILE id="WD5G9k" name="Dot-Down.jpg" compile="0" resource="1" file="Buttons Original Size/Dot-Down.jpg"/>
+      <FILE id="HZwewn" name="Dot-Up.jpg" compile="0" resource="1" file="Buttons Original Size/Dot-Up.jpg"/>
+      <FILE id="wyceu5" name="Equals-Down.jpg" compile="0" resource="1" file="Buttons Original Size/Equals-Down.jpg"/>
+      <FILE id="kPSqGO" name="Equals-Up.jpg" compile="0" resource="1" file="Buttons Original Size/Equals-Up.jpg"/>
+      <FILE id="nKU82u" name="Mulltiply-Up.jpg" compile="0" resource="1"
+            file="Buttons Original Size/Mulltiply-Up.jpg"/>
+      <FILE id="l8wClr" name="Multiply-Down.jpg" compile="0" resource="1"
+            file="Buttons Original Size/Multiply-Down.jpg"/>
+      <FILE id="uQlDRq" name="Output.jpg" compile="0" resource="1" file="Buttons Original Size/Output.jpg"/>
+      <FILE id="E4aNom" name="Plus-Down.jpg" compile="0" resource="1" file="Buttons Original Size/Plus-Down.jpg"/>
+      <FILE id="gi2JT3" name="Plus-Up.jpg" compile="0" resource="1" file="Buttons Original Size/Plus-Up.jpg"/>
+      <FILE id="IO6r47" name="Set-Down.jpg" compile="0" resource="1" file="Buttons Original Size/Set-Down.jpg"/>
+      <FILE id="fuawMP" name="Set-Up.jpg" compile="0" resource="1" file="Buttons Original Size/Set-Up.jpg"/>
+      <FILE id="zB3p6n" name="Subtract-Down.jpg" compile="0" resource="1"
+            file="Buttons Original Size/Subtract-Down.jpg"/>
+      <FILE id="aHc2rV" name="Subtract-Up.jpg" compile="0" resource="1" file="Buttons Original Size/Subtract-Up.jpg"/>
+    </GROUP>
+    <GROUP id="{16931959-C132-A5B9-90A9-1E12B6A306AA}" name="Source">
+      <FILE id="EPKMVN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="HmotYd" name="Interface.h" compile="0" resource="0" file="Source/Interface.h"/>
+      <FILE id="iQiVkF" name="Interface.cpp" compile="1" resource="0" file="Source/Interface.cpp"/>
+      <FILE id="tmjjNj" name="Calculate.hpp" compile="0" resource="0" file="Source/Calculate.hpp"/>
+      <FILE id="VwKtKL" name="Calculate.cpp" compile="1" resource="0" file="Source/Calculate.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_IPHONE targetFolder="Builds/iOS" iosScreenOrientation="portraitlandscape">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Paper Calculator"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="Paper Calculator"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_opengl" path="../../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../Libraries/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../Libraries/JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_IPHONE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
