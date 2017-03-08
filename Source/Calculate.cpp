@@ -30,7 +30,6 @@ void Calculate::basicClear()
 {
     clearTotal();
     operandOne                    = 0;
-    
     resetToNonDecimalNumberInput();
 }
 
@@ -49,21 +48,28 @@ void Calculate::performCalculation()
     switch (operatorChosen)
     {
         case addition:
-            total = operandOne + total;
+            total = total + operandOne;
             break;
         case subtraction:
-            total = operandOne - total;
+            total = total - operandOne;
             break;
         case multiplication:
-            total = operandOne * total;
+            total = total * operandOne;
             break;
         case division:
-            total = operandOne / total;
+            total = total / operandOne;
             break;
             // Do nothing
         default:
             break;
     }
+}
+
+void Calculate::executeOperation(const int &input)
+{
+    setOperationChosen(input);
+    transferTotalToOperand();
+    resetToNonDecimalNumberInput();
 }
 
 void Calculate::calculateNumberInput(const int &singleDigitInput)

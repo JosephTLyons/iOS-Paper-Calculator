@@ -266,9 +266,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_plus] -- add your button handler code here..
 
-        calculateObject.transferTotalToOperand();
-        calculateObject.setOperationChosen(1);
-        calculateObject.resetToNonDecimalNumberInput();
+        calculateObject.executeOperation(1);
 
         //[/UserButtonCode_plus]
     }
@@ -348,9 +346,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_minus] -- add your button handler code here..
 
-        calculateObject.transferTotalToOperand();
-        calculateObject.setOperationChosen(2);
-        calculateObject.resetToNonDecimalNumberInput();
+        calculateObject.executeOperation(2);
 
         //[/UserButtonCode_minus]
     }
@@ -358,9 +354,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_multiply] -- add your button handler code here..
 
-        calculateObject.transferTotalToOperand();
-        calculateObject.setOperationChosen(3);
-        calculateObject.resetToNonDecimalNumberInput();
+        calculateObject.executeOperation(3);
 
         //[/UserButtonCode_multiply]
     }
@@ -368,9 +362,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_divide] -- add your button handler code here..
 
-        calculateObject.transferTotalToOperand();
-        calculateObject.setOperationChosen(4);
-        calculateObject.resetToNonDecimalNumberInput();
+        calculateObject.executeOperation(4);
 
         //[/UserButtonCode_divide]
     }

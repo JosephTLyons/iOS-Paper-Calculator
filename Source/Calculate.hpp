@@ -27,24 +27,25 @@ private:
     bool decimalPointFlag;
     double dividingNumberForDecimalPlace;
     
+    void clearTotal();
+    void resetToNonDecimalNumberInput();
+    void setOperationChosen(const int &input);
+    void transferTotalToOperand();
+    
 public:
     
     Calculate();
     
-    void clearTotal();
-    void resetToNonDecimalNumberInput();
     void basicClear();
     void advancedClear();
     
     void performCalculation();
+    void executeOperation(const int &input);
     void calculateNumberInput(const int &singleDigitInput);
     
-    void setOperationChosen(const int &input);
     void setDecimalPointFlag(const bool &trueOrFalse);
     
     double getTotalValue();
-    
-    void transferTotalToOperand();
 };
 
 #endif /* Calculate_hpp */
