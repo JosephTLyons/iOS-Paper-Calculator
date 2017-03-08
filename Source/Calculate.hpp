@@ -32,14 +32,13 @@ public:
     Calculate();
     
     void clearTotal();
+    void resetToNonDecimalNumberInput();
     void basicClear();
     void advancedClear();
+    
     void performCalculation();
     void calculateNumberInput(const int &singleDigitInput);
     
-    void setOperandOne(const double &input);
-    void setStorageA(const double &input);
-    void setStorageB(const double &input);
     void setOperationChosen(const int &input);
     void setDecimalPointFlag(const bool &trueOrFalse);
     

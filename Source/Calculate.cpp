@@ -20,13 +20,18 @@ void Calculate::clearTotal()
     total = 0;
 }
 
+void Calculate::resetToNonDecimalNumberInput()
+{
+    decimalPointFlag              = false;
+    dividingNumberForDecimalPlace = 1;
+}
+
 void Calculate::basicClear()
 {
     clearTotal();
     operandOne                    = 0;
     
-    decimalPointFlag              = false;
-    dividingNumberForDecimalPlace = 1;
+    resetToNonDecimalNumberInput();
 }
 
 // Used by constructor and when holding down the clear button for 3+ seconds
@@ -80,21 +85,6 @@ void Calculate::calculateNumberInput(const int &singleDigitInput)
 }
 
 /**************************************************/
-
-void Calculate::setOperandOne(const double &input)
-{
-    operandOne = input;
-}
-
-void Calculate::setStorageA(const double &input)
-{
-    storageA = input;
-}
-
-void Calculate::setStorageB(const double &input)
-{
-    storageB = input;
-}
 
 void Calculate::setOperationChosen(const int &input)
 {

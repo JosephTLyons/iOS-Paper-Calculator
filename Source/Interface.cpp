@@ -249,6 +249,9 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == decimalPoint)
     {
         //[UserButtonCode_decimalPoint] -- add your button handler code here..
+        
+        calculateObject.setDecimalPointFlag(true);
+        
         //[/UserButtonCode_decimalPoint]
     }
     else if (buttonThatWasClicked == equals)
@@ -265,6 +268,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(1);
+        calculateObject.resetToNonDecimalNumberInput();
 
         //[/UserButtonCode_plus]
     }
@@ -346,6 +350,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(2);
+        calculateObject.resetToNonDecimalNumberInput();
 
         //[/UserButtonCode_minus]
     }
@@ -355,6 +360,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(3);
+        calculateObject.resetToNonDecimalNumberInput();
 
         //[/UserButtonCode_multiply]
     }
@@ -364,6 +370,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(4);
+        calculateObject.resetToNonDecimalNumberInput();
 
         //[/UserButtonCode_divide]
     }
