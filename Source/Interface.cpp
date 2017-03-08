@@ -212,7 +212,7 @@ void Interface::resized()
     zero->setBounds (0, 488, 80, 80);
     decimalPoint->setBounds (80, 488, 80, 80);
     equals->setBounds (160, 488, 80, 80);
-    plus->setBounds (240, 488, 80, 80);
+    plus->setBounds (240, 408, 80, 80);
     one->setBounds (0, 408, 80, 80);
     two->setBounds (80, 408, 80, 80);
     three->setBounds (160, 408, 80, 80);
@@ -222,13 +222,13 @@ void Interface::resized()
     seven->setBounds (0, 248, 80, 80);
     eight->setBounds (80, 248, 80, 80);
     nine->setBounds (160, 248, 80, 80);
-    minus->setBounds (240, 408, 80, 80);
-    multiply->setBounds (240, 328, 80, 80);
-    divide->setBounds (240, 248, 80, 80);
+    minus->setBounds (240, 328, 80, 80);
+    multiply->setBounds (240, 248, 80, 80);
+    divide->setBounds (240, 168, 80, 80);
     set->setBounds (160, 168, 80, 80);
     setA->setBounds (0, 168, 80, 80);
     setB->setBounds (80, 168, 80, 80);
-    clear->setBounds (240, 168, 80, 80);
+    clear->setBounds (240, 488, 80, 80);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -254,18 +254,18 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == equals)
     {
         //[UserButtonCode_equals] -- add your button handler code here..
-        
+
         calculateObject.performCalculation();
-        
+
         //[/UserButtonCode_equals]
     }
     else if (buttonThatWasClicked == plus)
     {
         //[UserButtonCode_plus] -- add your button handler code here..
-        
+
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(1);
-        
+
         //[/UserButtonCode_plus]
     }
     else if (buttonThatWasClicked == one)
@@ -343,28 +343,28 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == minus)
     {
         //[UserButtonCode_minus] -- add your button handler code here..
-        
+
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(2);
-        
+
         //[/UserButtonCode_minus]
     }
     else if (buttonThatWasClicked == multiply)
     {
         //[UserButtonCode_multiply] -- add your button handler code here..
-        
+
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(3);
-        
+
         //[/UserButtonCode_multiply]
     }
     else if (buttonThatWasClicked == divide)
     {
         //[UserButtonCode_divide] -- add your button handler code here..
-        
+
         calculateObject.transferTotalToOperand();
         calculateObject.setOperationChosen(4);
-        
+
         //[/UserButtonCode_divide]
     }
     else if (buttonThatWasClicked == set)
@@ -433,7 +433,7 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="160 488 80 80" buttonText="=" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="plus" id="b020b4abf9fd0751" memberName="plus" virtualName=""
-              explicitFocusOrder="0" pos="240 488 80 80" buttonText="+" connectedEdges="12"
+              explicitFocusOrder="0" pos="240 408 80 80" buttonText="+" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="one" id="15e81326eba0e0cf" memberName="one" virtualName=""
               explicitFocusOrder="0" pos="0 408 80 80" buttonText="1" connectedEdges="12"
@@ -463,13 +463,13 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="160 248 80 80" buttonText="9" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="minus" id="ec24c1b3de1f2aae" memberName="minus" virtualName=""
-              explicitFocusOrder="0" pos="240 408 80 80" buttonText="-" connectedEdges="12"
+              explicitFocusOrder="0" pos="240 328 80 80" buttonText="-" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="multiply" id="f5beeca49d4742cc" memberName="multiply" virtualName=""
-              explicitFocusOrder="0" pos="240 328 80 80" buttonText="X" connectedEdges="12"
+              explicitFocusOrder="0" pos="240 248 80 80" buttonText="X" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="divide" id="e1847e3bb1546dd7" memberName="divide" virtualName=""
-              explicitFocusOrder="0" pos="240 248 80 80" buttonText="/" connectedEdges="12"
+              explicitFocusOrder="0" pos="240 168 80 80" buttonText="/" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="set" id="75edee8fa483a117" memberName="set" virtualName=""
               explicitFocusOrder="0" pos="160 168 80 80" buttonText="SET" connectedEdges="12"
@@ -481,7 +481,7 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="80 168 80 80" buttonText="B" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="clear" id="b6484fd5b491bd9b" memberName="clear" virtualName=""
-              explicitFocusOrder="0" pos="240 168 80 80" buttonText="Clear"
+              explicitFocusOrder="0" pos="240 488 80 80" buttonText="Clear"
               connectedEdges="12" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
