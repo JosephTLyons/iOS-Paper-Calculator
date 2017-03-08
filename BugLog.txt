@@ -9,3 +9,5 @@
    then just store total in storage.
 
 3) Precision when working with some floats is incorrect (under the hood?).
+
+4) Cant toggle function button twice
