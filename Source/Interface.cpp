@@ -136,6 +136,11 @@ Interface::Interface ()
     setB->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     setB->addListener (this);
 
+    addAndMakeVisible (clear = new TextButton ("clear"));
+    clear->setButtonText (TRANS("Clear"));
+    clear->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    clear->addListener (this);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -147,7 +152,7 @@ Interface::Interface ()
 
     // Make set button a toggle button
     set->setClickingTogglesState(true);
-    
+
     // Set initial value to output
     output->setText((String) calculateObject.getTotalValue());
 
@@ -179,6 +184,7 @@ Interface::~Interface()
     set = nullptr;
     setA = nullptr;
     setB = nullptr;
+    clear = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -219,9 +225,10 @@ void Interface::resized()
     minus->setBounds (240, 408, 80, 80);
     multiply->setBounds (240, 328, 80, 80);
     divide->setBounds (240, 248, 80, 80);
-    set->setBounds (160, 168, 160, 80);
+    set->setBounds (160, 168, 80, 80);
     setA->setBounds (0, 168, 80, 80);
     setB->setBounds (80, 168, 80, 80);
+    clear->setBounds (240, 168, 80, 80);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -234,6 +241,9 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     if (buttonThatWasClicked == zero)
     {
         //[UserButtonCode_zero] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(0);
+
         //[/UserButtonCode_zero]
     }
     else if (buttonThatWasClicked == decimalPoint)
@@ -254,46 +264,73 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == one)
     {
         //[UserButtonCode_one] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(1);
+
         //[/UserButtonCode_one]
     }
     else if (buttonThatWasClicked == two)
     {
         //[UserButtonCode_two] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(2);
+
         //[/UserButtonCode_two]
     }
     else if (buttonThatWasClicked == three)
     {
         //[UserButtonCode_three] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(3);
+
         //[/UserButtonCode_three]
     }
     else if (buttonThatWasClicked == four)
     {
         //[UserButtonCode_four] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(4);
+
         //[/UserButtonCode_four]
     }
     else if (buttonThatWasClicked == five)
     {
         //[UserButtonCode_five] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(5);
+
         //[/UserButtonCode_five]
     }
     else if (buttonThatWasClicked == six)
     {
         //[UserButtonCode_six] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(6);
+
         //[/UserButtonCode_six]
     }
     else if (buttonThatWasClicked == seven)
     {
         //[UserButtonCode_seven] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(7);
+
         //[/UserButtonCode_seven]
     }
     else if (buttonThatWasClicked == eight)
     {
         //[UserButtonCode_eight] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(8);
+
         //[/UserButtonCode_eight]
     }
     else if (buttonThatWasClicked == nine)
     {
         //[UserButtonCode_nine] -- add your button handler code here..
+
+        calculateObject.calculateNumberInput(9);
+
         //[/UserButtonCode_nine]
     }
     else if (buttonThatWasClicked == minus)
@@ -325,6 +362,14 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_setB] -- add your button handler code here..
         //[/UserButtonCode_setB]
+    }
+    else if (buttonThatWasClicked == clear)
+    {
+        //[UserButtonCode_clear] -- add your button handler code here..
+
+        calculateObject.basicClear();
+
+        //[/UserButtonCode_clear]
     }
 
     //[UserbuttonClicked_Post]
@@ -408,14 +453,17 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="240 248 80 80" buttonText="/" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="set" id="75edee8fa483a117" memberName="set" virtualName=""
-              explicitFocusOrder="0" pos="160 168 160 80" buttonText="SET"
-              connectedEdges="12" needsCallback="1" radioGroupId="0"/>
+              explicitFocusOrder="0" pos="160 168 80 80" buttonText="SET" connectedEdges="12"
+              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="setA" id="8165831a8eddd1a0" memberName="setA" virtualName=""
               explicitFocusOrder="0" pos="0 168 80 80" buttonText="A" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="setB" id="845f3f0ecd702467" memberName="setB" virtualName=""
               explicitFocusOrder="0" pos="80 168 80 80" buttonText="B" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="clear" id="b6484fd5b491bd9b" memberName="clear" virtualName=""
+              explicitFocusOrder="0" pos="240 168 80 80" buttonText="Clear"
+              connectedEdges="12" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

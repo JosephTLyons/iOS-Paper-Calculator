@@ -56,7 +56,7 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
     Calculate calculateObject;
-    
+
     //[/UserVariables]
 
     //==============================================================================
@@ -80,6 +80,7 @@ private:
     ScopedPointer<TextButton> set;
     ScopedPointer<TextButton> setA;
     ScopedPointer<TextButton> setB;
+    ScopedPointer<TextButton> clear;
 
 
     //==============================================================================

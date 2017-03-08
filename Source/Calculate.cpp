@@ -73,6 +73,9 @@ void Calculate::calculateNumberInput(const int &singleDigitInput)
         temporary /= dividingNumberForDecimalPlace;
         operandOne += temporary;
     }
+    
+    // Temp
+    total = operandOne;
 }
 
 /**************************************************/
