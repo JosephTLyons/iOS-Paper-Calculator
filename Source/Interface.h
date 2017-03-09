@@ -82,7 +82,7 @@ private:
     ScopedPointer<TextButton> setA;
     ScopedPointer<TextButton> setB;
     ScopedPointer<TextButton> clear;
-    ScopedPointer<Label> calcLabel;
+    ScopedPointer<Label> paperCalcLabel;
 
 
     //==============================================================================

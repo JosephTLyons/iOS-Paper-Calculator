@@ -154,14 +154,14 @@ Interface::Interface ()
     clear->addListener (this);
     clear->setColour (TextButton::buttonColourId, Colours::crimson);
 
-    addAndMakeVisible (calcLabel = new Label ("calcLabel",
-                                              TRANS("Paper Calculator")));
-    calcLabel->setFont (Font ("Brush Script MT", 72.90f, Font::plain));
-    calcLabel->setJustificationType (Justification::centred);
-    calcLabel->setEditable (false, false, false);
-    calcLabel->setColour (Label::textColourId, Colours::white);
-    calcLabel->setColour (TextEditor::textColourId, Colours::black);
-    calcLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    addAndMakeVisible (paperCalcLabel = new Label ("paperCalcLabel",
+                                                   TRANS("Paper Calculator")));
+    paperCalcLabel->setFont (Font ("Brush Script MT", 65.80f, Font::plain));
+    paperCalcLabel->setJustificationType (Justification::centred);
+    paperCalcLabel->setEditable (false, false, false);
+    paperCalcLabel->setColour (Label::textColourId, Colours::white);
+    paperCalcLabel->setColour (TextEditor::textColourId, Colours::black);
+    paperCalcLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
 
     //[UserPreSize]
@@ -211,7 +211,7 @@ Interface::~Interface()
     setA = nullptr;
     setB = nullptr;
     clear = nullptr;
-    calcLabel = nullptr;
+    paperCalcLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -256,7 +256,7 @@ void Interface::resized()
     setA->setBounds (0, 168, 80, 80);
     setB->setBounds (80, 168, 80, 80);
     clear->setBounds (240, 488, 80, 80);
-    calcLabel->setBounds (0, 24, 320, 80);
+    paperCalcLabel->setBounds (0, 0, 320, 96);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -553,11 +553,11 @@ BEGIN_JUCER_METADATA
   <TEXTBUTTON name="clear" id="b6484fd5b491bd9b" memberName="clear" virtualName=""
               explicitFocusOrder="0" pos="240 488 80 80" bgColOff="ffdc143c"
               buttonText="Clear" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
-  <LABEL name="calcLabel" id="7648bb610c523783" memberName="calcLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 24 320 80" textCol="ffffffff"
+  <LABEL name="paperCalcLabel" id="73e54c5cb21febf6" memberName="paperCalcLabel"
+         virtualName="" explicitFocusOrder="0" pos="0 0 320 96" textCol="ffffffff"
          edTextCol="ff000000" edBkgCol="0" labelText="Paper Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Brush Script MT" fontsize="72.900000000000005684" bold="0"
+         fontname="Brush Script MT" fontsize="65.799999999999997158" bold="0"
          italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
