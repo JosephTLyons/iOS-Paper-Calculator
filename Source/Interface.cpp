@@ -156,7 +156,7 @@ Interface::Interface ()
 
     addAndMakeVisible (paperCalcLabel = new Label ("paperCalcLabel",
                                                    TRANS("Paper Calculator")));
-    paperCalcLabel->setFont (Font ("Brush Script MT", 65.80f, Font::plain));
+    paperCalcLabel->setFont (Font ("Chalkduster", 56.00f, Font::plain));
     paperCalcLabel->setJustificationType (Justification::centred);
     paperCalcLabel->setEditable (false, false, false);
     paperCalcLabel->setColour (Label::textColourId, Colours::white);
@@ -404,7 +404,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_multiply] -- add your button handler code here..
 
         calculateObject.executeOperation(3);
-
+        
         //[/UserButtonCode_multiply]
     }
     else if (buttonThatWasClicked == divide)
@@ -557,8 +557,7 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 0 320 96" textCol="ffffffff"
          edTextCol="ff000000" edBkgCol="0" labelText="Paper Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Brush Script MT" fontsize="65.799999999999997158" bold="0"
-         italic="0" justification="36"/>
+         fontname="Chalkduster" fontsize="56" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -1,3 +1,5 @@
+Bugs:
+
 1) Performing a single calculation, then performing another using another operator
    on the last total doesn't work.  When switching operators, the value stored in
    operand is moved to total, which is causing the issue.
@@ -11,3 +13,10 @@
 3) Precision when working with some floats is incorrect (under the hood?).
 
 4) Cant toggle function button twice
+
+5) Selecting an operator twice before hitting equals screws up the calculation - this is due to
+   The nature of moving the operand to total, if done twice, the second time moves a zero to total
+
+Features:
+
+1) Set output font to right justify somehow
