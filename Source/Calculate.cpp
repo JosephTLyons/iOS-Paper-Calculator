@@ -78,34 +78,35 @@ void Calculate::buildInputValue(const int &singleDigitInput)
     // Only store in total for first calculation
     if (operatorUsageCount == 0)
     {
-        total = calculateInputNumber(singleDigitInput);
+        total = calculateInputNumber(total, singleDigitInput);
     }
     
     else
     {
-        operandOne = calculateInputNumber(singleDigitInput);
+        operandOne = calculateInputNumber(operandOne, singleDigitInput);
     }
 }
 
-double Calculate::calculateInputNumber(const int &singleDigitInput)
+double Calculate::calculateInputNumber(double baseNumber, const int &singleDigitInput)
 {
-    double temporary = singleDigitInput;
-    double number    = 0;
+    double temporarySingleValueInput = singleDigitInput;
     
+    // Build whole value number
     if(decimalPointFlag == false)
     {
-        number *= 10;
-        number += temporary;
+        baseNumber *= 10;
+        baseNumber += temporarySingleValueInput;
     }
     
+    // Build values to the right of the decimal point
     else
     {
         dividingNumberForDecimalPlace *= 10;
-        temporary /= dividingNumberForDecimalPlace;
-        number += temporary;
+        temporarySingleValueInput /= dividingNumberForDecimalPlace;
+        baseNumber += temporarySingleValueInput;
     }
     
-    return number;
+    return baseNumber;
 }
 
 /**************************************************/

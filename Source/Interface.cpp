@@ -397,9 +397,9 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_minus] -- add your button handler code here..
 
         calculateObject.executeOperation(2);
+        calculateObject.incrementOperatorUsageCount();
 
         //[/UserButtonCode_minus]
-        calculateObject.incrementOperatorUsageCount();
     }
     else if (buttonThatWasClicked == multiply)
     {
