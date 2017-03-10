@@ -2,22 +2,16 @@ Bugs:
 
 1) Be able to show both first and second number typed in output textEditor
 
-2) Logic for setting storage isn't correct.  This has to due with the current logic
-   of showing two different outputs (operand and total) to the editor.  Rework logic
-   so that total is the only one being shown (like in the first version), so that the
-   total is always whats being show (except when typing in a new number, which will be displayed),
-   then just store total in storage.
+2) Precision when working with some floats is incorrect (under the hood?).
 
-3) Precision when working with some floats is incorrect (under the hood?).
+3) Cant toggle function button twice
 
-4) Cant toggle function button twice
-
-5) Selecting an operator twice before hitting equals screws up the calculation - this is due to
+4) Selecting an operator twice before hitting equals screws up the calculation - this is due to
    The nature of moving the operand to total, if done twice, the second time moves a zero to total
 
-6) Exponential notation happens way too soon
+5) Exponential notation happens way too soon
 
-7) Clicking equals doesn't always output the right value
+6) Clicking equals doesn't always output the right value
 
 Features:
 

@@ -264,16 +264,6 @@ void Interface::resized()
 void Interface::buttonClicked (Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
-
-    static bool isFunctionToggleActivated = false;
-
-    // Turn off function, if its own, upon next button press
-    if(isFunctionToggleActivated)
-    {
-        function->setToggleState(false, dontSendNotification);
-        isFunctionToggleActivated = false;
-    }
-
     //[/UserbuttonClicked_Pre]
 
     if (buttonThatWasClicked == zero)
@@ -281,7 +271,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_zero] -- add your button handler code here..
 
         calculateObject.buildInputValue(0);
-        output->setText((String) calculateObject.getOperandOne());
+        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_zero]
     }
@@ -422,9 +412,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == function)
     {
         //[UserButtonCode_function] -- add your button handler code here..
-
-        isFunctionToggleActivated = true;
-
         //[/UserButtonCode_function]
     }
     else if (buttonThatWasClicked == setA)
