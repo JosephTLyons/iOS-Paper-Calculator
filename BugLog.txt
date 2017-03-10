@@ -17,6 +17,14 @@ Bugs:
 5) Selecting an operator twice before hitting equals screws up the calculation - this is due to
    The nature of moving the operand to total, if done twice, the second time moves a zero to total
 
+6) Exponential notation happens way too soon
+
+7) TextEditor currently allows input, turn this off
+
+8) Clicking equals doesn't always output the right value
+
+9) Change color of toggle button when its on
+
 Features:
 
 1) Set output font to right justify somehow
