@@ -25,6 +25,8 @@ private:
     int operatorChosen;
     int operatorUsageCount;
     
+    double calculateInputNumber(const int &singleDigitInput);
+    
     bool decimalPointFlag;
     double dividingNumberForDecimalPlace;
     
@@ -41,7 +43,7 @@ public:
     
     void performCalculation();
     void executeOperation(const int &input);
-    void calculateNumberInput(const int &singleDigitInput);
+    void buildInputValue(const int &singleDigitInput);
     
     void incrementOperatorUsageCount();
     

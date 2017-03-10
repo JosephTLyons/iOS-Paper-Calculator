@@ -38,7 +38,6 @@ void Calculate::basicClear()
 void Calculate::advancedClear()
 {
     basicClear();
-    
     storageA       = 0;
     storageB       = 0;
     operatorChosen = 0;
@@ -73,42 +72,40 @@ void Calculate::executeOperation(const int &input)
     resetToNonDecimalNumberInput();
 }
 
-void Calculate::calculateNumberInput(const int &singleDigitInput)
+void Calculate::buildInputValue(const int &singleDigitInput)
 {
-    double temporary = singleDigitInput;
     
     // Only store in total for first calculation
     if (operatorUsageCount == 0)
     {
-        if(decimalPointFlag == false)
-        {
-            total *= 10;
-            total += temporary;
-        }
-        
-        else
-        {
-            dividingNumberForDecimalPlace *= 10;
-            temporary /= dividingNumberForDecimalPlace;
-            total += temporary;
-        }
+        total = calculateInputNumber(singleDigitInput);
     }
     
     else
     {
-        if(decimalPointFlag == false)
-        {
-            operandOne *= 10;
-            operandOne += temporary;
-        }
-        
-        else
-        {
-            dividingNumberForDecimalPlace *= 10;
-            temporary /= dividingNumberForDecimalPlace;
-            operandOne += temporary;
-        }
+        operandOne = calculateInputNumber(singleDigitInput);
     }
+}
+
+double Calculate::calculateInputNumber(const int &singleDigitInput)
+{
+    double temporary = singleDigitInput;
+    double number    = 0;
+    
+    if(decimalPointFlag == false)
+    {
+        number *= 10;
+        number += temporary;
+    }
+    
+    else
+    {
+        dividingNumberForDecimalPlace *= 10;
+        temporary /= dividingNumberForDecimalPlace;
+        number += temporary;
+    }
+    
+    return number;
 }
 
 /**************************************************/

@@ -280,7 +280,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_zero] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(0);
+        calculateObject.buildInputValue(0);
         output->setText((String) calculateObject.getOperandOne());
 
         //[/UserButtonCode_zero]
@@ -315,7 +315,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_one] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(1);
+        calculateObject.buildInputValue(1);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_one]
@@ -324,7 +324,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_two] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(2);
+        calculateObject.buildInputValue(2);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_two]
@@ -333,7 +333,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_three] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(3);
+        calculateObject.buildInputValue(3);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_three]
@@ -342,7 +342,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_four] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(4);
+        calculateObject.buildInputValue(4);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_four]
@@ -351,7 +351,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_five] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(5);
+        calculateObject.buildInputValue(5);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_five]
@@ -360,7 +360,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_six] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(6);
+        calculateObject.buildInputValue(6);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_six]
@@ -369,7 +369,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_seven] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(7);
+        calculateObject.buildInputValue(7);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_seven]
@@ -378,7 +378,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_eight] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(8);
+        calculateObject.buildInputValue(8);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_eight]
@@ -387,7 +387,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_nine] -- add your button handler code here..
 
-        calculateObject.calculateNumberInput(9);
+        calculateObject.buildInputValue(9);
         output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_nine]
