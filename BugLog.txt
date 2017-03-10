@@ -13,6 +13,11 @@ Bugs:
 
 6) Clicking equals doesn't always output the right value
 
+7) Input into variables A and B work fine (from total only, still no way to get it from operand),
+   but the issue is that setting the value to total has issues.  We can't perform operations on them
+   since both A and B set them to total - need to figure out how to set one to operator and one to
+   total.'
+
 Features:
 
 1) Set output font to right justify somehow

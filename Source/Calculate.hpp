@@ -30,6 +30,7 @@ private:
     bool decimalPointFlag;
     double dividingNumberForDecimalPlace;
     
+    void clearTotal();
     void clearOperand();
     void resetToNonDecimalNumberInput();
     void setOperationChosen(const int &input);
@@ -50,6 +51,8 @@ public:
     void setDecimalPointFlag(const bool &trueOrFalse);
     void setStorageA();
     void setStorageB();
+    void setTotalFromStorageA();
+    void setTotalFromStorageB();
     
     double getOperandOne();
     double getTotalValue();

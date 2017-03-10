@@ -132,8 +132,8 @@ Interface::Interface ()
     function->setButtonText (TRANS("FUNC"));
     function->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     function->addListener (this);
-    function->setColour (TextButton::buttonColourId, Colours::crimson);
-    function->setColour (TextButton::buttonOnColourId, Colour (0xff929292));
+    function->setColour (TextButton::buttonColourId, Colour (0xff929292));
+    function->setColour (TextButton::buttonOnColourId, Colours::crimson);
     function->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (setA = new TextButton ("setA"));
@@ -271,7 +271,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_zero] -- add your button handler code here..
 
         calculateObject.buildInputValue(0);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_zero]
     }
@@ -288,7 +287,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_equals] -- add your button handler code here..
 
         calculateObject.performCalculation();
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_equals]
     }
@@ -306,7 +304,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_one] -- add your button handler code here..
 
         calculateObject.buildInputValue(1);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_one]
     }
@@ -315,7 +312,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_two] -- add your button handler code here..
 
         calculateObject.buildInputValue(2);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_two]
     }
@@ -324,7 +320,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_three] -- add your button handler code here..
 
         calculateObject.buildInputValue(3);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_three]
     }
@@ -333,7 +328,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_four] -- add your button handler code here..
 
         calculateObject.buildInputValue(4);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_four]
     }
@@ -342,7 +336,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_five] -- add your button handler code here..
 
         calculateObject.buildInputValue(5);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_five]
     }
@@ -351,7 +344,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_six] -- add your button handler code here..
 
         calculateObject.buildInputValue(6);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_six]
     }
@@ -360,7 +352,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_seven] -- add your button handler code here..
 
         calculateObject.buildInputValue(7);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_seven]
     }
@@ -369,7 +360,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_eight] -- add your button handler code here..
 
         calculateObject.buildInputValue(8);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_eight]
     }
@@ -378,7 +368,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_nine] -- add your button handler code here..
 
         calculateObject.buildInputValue(9);
-        output->setText((String) calculateObject.getTotalValue());
 
         //[/UserButtonCode_nine]
     }
@@ -422,6 +411,11 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         {
             calculateObject.setStorageA();
         }
+        
+        else
+        {
+            calculateObject.setTotalFromStorageA();
+        }
 
         //[/UserButtonCode_setA]
     }
@@ -432,6 +426,11 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         if(function->getToggleState())
         {
             calculateObject.setStorageB();
+        }
+        
+        else
+        {
+            calculateObject.setTotalFromStorageB();
         }
 
         //[/UserButtonCode_setB]
@@ -456,6 +455,9 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     }
 
     //[UserbuttonClicked_Post]
+    
+    output->setText((String) calculateObject.getTotalValue());
+    
     //[/UserbuttonClicked_Post]
 }
 
@@ -532,8 +534,8 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="240 168 80 80" bgColOff="ff00ffff"
               buttonText="/" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="function" id="75edee8fa483a117" memberName="function" virtualName=""
-              explicitFocusOrder="0" pos="160 168 80 80" bgColOff="ffdc143c"
-              bgColOn="ff929292" textColOn="ff000000" buttonText="FUNC" connectedEdges="12"
+              explicitFocusOrder="0" pos="160 168 80 80" bgColOff="ff929292"
+              bgColOn="ffdc143c" textColOn="ff000000" buttonText="FUNC" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="setA" id="8165831a8eddd1a0" memberName="setA" virtualName=""
               explicitFocusOrder="0" pos="0 168 80 80" bgColOff="ffdc143c"

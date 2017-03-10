@@ -15,6 +15,11 @@ Calculate::Calculate()
 
 /**************************************************/
 
+void Calculate::clearTotal()
+{
+    total = 0;
+}
+
 void Calculate::clearOperand()
 {
     operandOne = 0;
@@ -28,7 +33,7 @@ void Calculate::resetToNonDecimalNumberInput()
 
 void Calculate::basicClear()
 {
-    total = 0;
+    clearTotal();
     operatorUsageCount = 0;
     clearOperand();
     resetToNonDecimalNumberInput();
@@ -129,6 +134,16 @@ void Calculate::setStorageA()
 void Calculate::setStorageB()
 {
     storageB = total;
+}
+
+void Calculate::setTotalFromStorageA()
+{
+    total = storageA;
+}
+
+void Calculate::setTotalFromStorageB()
+{
+    total = storageB;
 }
 
 double Calculate::getOperandOne()
