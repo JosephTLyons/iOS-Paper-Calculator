@@ -23,6 +23,7 @@ private:
     // enum values are related to what operatorChosen will do when those values are stored in it
     enum{addition = 1, subtraction, multiplication, division};
     int operatorChosen;
+    int operatorUsageCount;
     
     bool decimalPointFlag;
     double dividingNumberForDecimalPlace;
@@ -30,7 +31,6 @@ private:
     void clearOperand();
     void resetToNonDecimalNumberInput();
     void setOperationChosen(const int &input);
-    void transferOperandToTotal();
     
 public:
     
@@ -42,6 +42,8 @@ public:
     void performCalculation();
     void executeOperation(const int &input);
     void calculateNumberInput(const int &singleDigitInput);
+    
+    void incrementOperatorUsageCount();
     
     void setDecimalPointFlag(const bool &trueOrFalse);
     void setStorageA();

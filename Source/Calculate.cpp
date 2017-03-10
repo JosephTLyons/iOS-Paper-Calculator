@@ -29,6 +29,7 @@ void Calculate::resetToNonDecimalNumberInput()
 void Calculate::basicClear()
 {
     total = 0;
+    operatorUsageCount = 0;
     clearOperand();
     resetToNonDecimalNumberInput();
 }
@@ -68,7 +69,7 @@ void Calculate::performCalculation()
 void Calculate::executeOperation(const int &input)
 {
     setOperationChosen(input);
-    transferOperandToTotal();
+    clearOperand();
     resetToNonDecimalNumberInput();
 }
 
@@ -76,17 +77,37 @@ void Calculate::calculateNumberInput(const int &singleDigitInput)
 {
     double temporary = singleDigitInput;
     
-    if(decimalPointFlag == false)
+    // Only store in total for first calculation
+    if (operatorUsageCount == 0)
     {
-        operandOne *= 10;
-        operandOne += temporary;
+        if(decimalPointFlag == false)
+        {
+            total *= 10;
+            total += temporary;
+        }
+        
+        else
+        {
+            dividingNumberForDecimalPlace *= 10;
+            temporary /= dividingNumberForDecimalPlace;
+            total += temporary;
+        }
     }
     
     else
     {
-        dividingNumberForDecimalPlace *= 10;
-        temporary /= dividingNumberForDecimalPlace;
-        operandOne += temporary;
+        if(decimalPointFlag == false)
+        {
+            operandOne *= 10;
+            operandOne += temporary;
+        }
+        
+        else
+        {
+            dividingNumberForDecimalPlace *= 10;
+            temporary /= dividingNumberForDecimalPlace;
+            operandOne += temporary;
+        }
     }
 }
 
@@ -122,8 +143,7 @@ double Calculate::getTotalValue()
     return total;
 }
 
-void Calculate::transferOperandToTotal()
+void Calculate::incrementOperatorUsageCount()
 {
-    total = operandOne;
-    clearOperand();
+    operatorUsageCount++;
 }

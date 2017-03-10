@@ -1,8 +1,6 @@
 Bugs:
 
-1) Performing a single calculation, then performing another using another operator
-   on the last total doesn't work.  When switching operators, the value stored in
-   operand is moved to total, which is causing the issue.
+1) Be able to show both first and second number typed in output textEditor
 
 2) Logic for setting storage isn't correct.  This has to due with the current logic
    of showing two different outputs (operand and total) to the editor.  Rework logic
