@@ -19,11 +19,7 @@ Bugs:
 
 6) Exponential notation happens way too soon
 
-7) TextEditor currently allows input, turn this off
-
-8) Clicking equals doesn't always output the right value
-
-9) Change color of toggle button when its on
+7) Clicking equals doesn't always output the right value
 
 Features:
 

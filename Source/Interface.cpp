@@ -35,9 +35,9 @@ Interface::Interface ()
     addAndMakeVisible (output = new TextEditor ("output"));
     output->setMultiLine (false);
     output->setReturnKeyStartsNewLine (false);
-    output->setReadOnly (false);
+    output->setReadOnly (true);
     output->setScrollbarsShown (true);
-    output->setCaretVisible (true);
+    output->setCaretVisible (false);
     output->setPopupMenuEnabled (true);
     output->setColour (TextEditor::textColourId, Colours::white);
     output->setColour (TextEditor::backgroundColourId, Colour (0xff1f1f1f));
@@ -133,7 +133,7 @@ Interface::Interface ()
     function->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
     function->addListener (this);
     function->setColour (TextButton::buttonColourId, Colours::crimson);
-    function->setColour (TextButton::buttonOnColourId, Colours::brown);
+    function->setColour (TextButton::buttonOnColourId, Colour (0xff929292));
     function->setColour (TextButton::textColourOnId, Colours::black);
 
     addAndMakeVisible (setA = new TextButton ("setA"));
@@ -404,7 +404,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_multiply] -- add your button handler code here..
 
         calculateObject.executeOperation(3);
-        
+
         //[/UserButtonCode_multiply]
     }
     else if (buttonThatWasClicked == divide)
@@ -490,8 +490,8 @@ BEGIN_JUCER_METADATA
   <BACKGROUND backgroundColour="ff1f1f1f"/>
   <TEXTEDITOR name="output" id="ef90af45fd38f38d" memberName="output" virtualName=""
               explicitFocusOrder="0" pos="0 96 320 72" textcol="ffffffff" bkgcol="ff1f1f1f"
-              initialText="" multiline="0" retKeyStartsLine="0" readonly="0"
-              scrollbars="1" caret="1" popupmenu="1"/>
+              initialText="" multiline="0" retKeyStartsLine="0" readonly="1"
+              scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTBUTTON name="zero" id="f19566c64d00a477" memberName="zero" virtualName=""
               explicitFocusOrder="0" pos="0 488 80 80" buttonText="0" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
@@ -542,7 +542,7 @@ BEGIN_JUCER_METADATA
               buttonText="/" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="function" id="75edee8fa483a117" memberName="function" virtualName=""
               explicitFocusOrder="0" pos="160 168 80 80" bgColOff="ffdc143c"
-              bgColOn="ffa52a2a" textColOn="ff000000" buttonText="FUNC" connectedEdges="12"
+              bgColOn="ff929292" textColOn="ff000000" buttonText="FUNC" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="setA" id="8165831a8eddd1a0" memberName="setA" virtualName=""
               explicitFocusOrder="0" pos="0 168 80 80" bgColOff="ffdc143c"
