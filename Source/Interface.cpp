@@ -188,6 +188,28 @@ Interface::Interface ()
     operandOutput->setColour (TextEditor::backgroundColourId, Colour (0xff1f1f1f));
     operandOutput->setText (String());
 
+    addAndMakeVisible (storageAOutput = new TextEditor ("storageAOutput"));
+    storageAOutput->setMultiLine (false);
+    storageAOutput->setReturnKeyStartsNewLine (false);
+    storageAOutput->setReadOnly (false);
+    storageAOutput->setScrollbarsShown (true);
+    storageAOutput->setCaretVisible (true);
+    storageAOutput->setPopupMenuEnabled (true);
+    storageAOutput->setColour (TextEditor::textColourId, Colours::white);
+    storageAOutput->setColour (TextEditor::backgroundColourId, Colour (0xff1f1f1f));
+    storageAOutput->setText (String());
+
+    addAndMakeVisible (storageBOutput = new TextEditor ("storageBOutput"));
+    storageBOutput->setMultiLine (false);
+    storageBOutput->setReturnKeyStartsNewLine (false);
+    storageBOutput->setReadOnly (false);
+    storageBOutput->setScrollbarsShown (true);
+    storageBOutput->setCaretVisible (true);
+    storageBOutput->setPopupMenuEnabled (true);
+    storageBOutput->setColour (TextEditor::textColourId, Colours::white);
+    storageBOutput->setColour (TextEditor::backgroundColourId, Colour (0xff1f1f1f));
+    storageBOutput->setText (String());
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -206,9 +228,13 @@ Interface::Interface ()
     // Make a new font object and pass into output textEditor
     textEditorFont.setSizeAndStyle(50, normal, 1, 0);
     output->setFont(textEditorFont);
-    
+
     // Set operandOutput to initial value (0)
     operandOutput->setText((String) calculateObject.getOperandOne());
+    
+    // Set storageOutputs to initial values (0)
+    storageAOutput->setText((String) calculateObject.getStorageA());
+    storageBOutput->setText((String) calculateObject.getStorageB());
 
     //[/Constructor]
 }
@@ -242,6 +268,8 @@ Interface::~Interface()
     paperCalcLabel = nullptr;
     operatorOutput = nullptr;
     operandOutput = nullptr;
+    storageAOutput = nullptr;
+    storageBOutput = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -287,8 +315,10 @@ void Interface::resized()
     setB->setBounds (80, 168, 80, 80);
     clear->setBounds (240, 488, 80, 80);
     paperCalcLabel->setBounds (0, -19, 320, 96);
-    operatorOutput->setBounds (0, 144, 32, 24);
-    operandOutput->setBounds (32, 144, 288, 24);
+    operatorOutput->setBounds (0, 144, 24, 24);
+    operandOutput->setBounds (24, 144, 136, 24);
+    storageAOutput->setBounds (160, 144, 80, 24);
+    storageBOutput->setBounds (240, 144, 80, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -495,9 +525,13 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
     // Set output to new value
     output->setText((String) calculateObject.getTotalValue());
-    
+
     // Set operandOutput to new value
     operandOutput->setText((String) calculateObject.getOperandOne());
+
+    // Set storageOutputs to new values
+    storageAOutput->setText((String) calculateObject.getStorageA());
+    storageBOutput->setText((String) calculateObject.getStorageB());
 
     //[/UserbuttonClicked_Post]
 }
@@ -593,11 +627,19 @@ BEGIN_JUCER_METADATA
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Chalkduster" fontsize="56" bold="0" italic="0" justification="36"/>
   <TEXTEDITOR name="operatorOutput" id="6f152493e6da4f75" memberName="operatorOutput"
-              virtualName="" explicitFocusOrder="0" pos="0 144 32 24" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="0 144 24 24" textcol="ffffffff"
               bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
   <TEXTEDITOR name="operatorOutput" id="ea066cc4fe5fc457" memberName="operandOutput"
-              virtualName="" explicitFocusOrder="0" pos="32 144 288 24" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="24 144 136 24" textcol="ffffffff"
+              bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
+  <TEXTEDITOR name="storageAOutput" id="f2023164c91320ae" memberName="storageAOutput"
+              virtualName="" explicitFocusOrder="0" pos="160 144 80 24" textcol="ffffffff"
+              bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
+  <TEXTEDITOR name="storageBOutput" id="90908b33051b1ed8" memberName="storageBOutput"
+              virtualName="" explicitFocusOrder="0" pos="240 144 80 24" textcol="ffffffff"
               bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>

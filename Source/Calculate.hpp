@@ -54,6 +54,9 @@ public:
     
     double getOperandOne();
     double getTotalValue();
+    
+    double getStorageA();
+    double getStorageB();
 };
 
 #endif /* Calculate_hpp */

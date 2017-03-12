@@ -16,3 +16,6 @@ Features:
 2) FUNC automatically untoggles after next button click
 
 3) Be able to chain operations together (EX. 1 + 2 + 3 = 6 vs 1 + 2 = 3 + 3 = 6)
+
+4) Make it so only values in operand and storage only show when they have a value, but not
+   when they only contain zero (disappear whne not needed philosophy)

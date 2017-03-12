@@ -92,6 +92,11 @@ void Calculate::addToInputValue(const int &singleDigitInput)
     }
 }
 
+void Calculate::incrementOperatorUsageCount()
+{
+    operatorUsageCount++;
+}
+
 double Calculate::calculateInputNumber(double baseNumber, const int &singleDigitInput)
 {
     double temporarySingleValueInput = singleDigitInput;
@@ -156,7 +161,12 @@ double Calculate::getTotalValue()
     return total;
 }
 
-void Calculate::incrementOperatorUsageCount()
+double Calculate::getStorageA()
 {
-    operatorUsageCount++;
+    return storageA;
+}
+
+double Calculate::getStorageB()
+{
+    return storageB;
 }

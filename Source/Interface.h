@@ -85,6 +85,8 @@ private:
     ScopedPointer<Label> paperCalcLabel;
     ScopedPointer<TextEditor> operatorOutput;
     ScopedPointer<TextEditor> operandOutput;
+    ScopedPointer<TextEditor> storageAOutput;
+    ScopedPointer<TextEditor> storageBOutput;
 
 
     //==============================================================================
