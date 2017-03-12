@@ -79,8 +79,8 @@ private:
     ScopedPointer<TextButton> multiply;
     ScopedPointer<TextButton> divide;
     ScopedPointer<TextButton> function;
-    ScopedPointer<TextButton> setA;
-    ScopedPointer<TextButton> setB;
+    ScopedPointer<TextButton> storageA;
+    ScopedPointer<TextButton> storageB;
     ScopedPointer<TextButton> clear;
     ScopedPointer<Label> paperCalcLabel;
     ScopedPointer<TextEditor> operatorOutput;

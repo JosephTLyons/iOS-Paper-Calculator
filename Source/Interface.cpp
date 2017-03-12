@@ -139,17 +139,17 @@ Interface::Interface ()
     function->setColour (TextButton::buttonOnColourId, Colours::crimson);
     function->setColour (TextButton::textColourOnId, Colours::black);
 
-    addAndMakeVisible (setA = new TextButton ("setA"));
-    setA->setButtonText (TRANS("A"));
-    setA->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
-    setA->addListener (this);
-    setA->setColour (TextButton::buttonColourId, Colours::crimson);
+    addAndMakeVisible (storageA = new TextButton ("storageA"));
+    storageA->setButtonText (TRANS("A"));
+    storageA->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    storageA->addListener (this);
+    storageA->setColour (TextButton::buttonColourId, Colours::crimson);
 
-    addAndMakeVisible (setB = new TextButton ("setB"));
-    setB->setButtonText (TRANS("B"));
-    setB->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
-    setB->addListener (this);
-    setB->setColour (TextButton::buttonColourId, Colours::crimson);
+    addAndMakeVisible (storageB = new TextButton ("setB"));
+    storageB->setButtonText (TRANS("B"));
+    storageB->setConnectedEdges (Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    storageB->addListener (this);
+    storageB->setColour (TextButton::buttonColourId, Colours::crimson);
 
     addAndMakeVisible (clear = new TextButton ("clear"));
     clear->setButtonText (TRANS("Clear"));
@@ -262,8 +262,8 @@ Interface::~Interface()
     multiply = nullptr;
     divide = nullptr;
     function = nullptr;
-    setA = nullptr;
-    setB = nullptr;
+    storageA = nullptr;
+    storageB = nullptr;
     clear = nullptr;
     paperCalcLabel = nullptr;
     operatorOutput = nullptr;
@@ -311,8 +311,8 @@ void Interface::resized()
     multiply->setBounds (240, 248, 80, 80);
     divide->setBounds (240, 168, 80, 80);
     function->setBounds (160, 168, 80, 80);
-    setA->setBounds (0, 168, 80, 80);
-    setB->setBounds (80, 168, 80, 80);
+    storageA->setBounds (0, 168, 80, 80);
+    storageB->setBounds (80, 168, 80, 80);
     clear->setBounds (240, 488, 80, 80);
     paperCalcLabel->setBounds (0, -19, 320, 96);
     operatorOutput->setBounds (160, 144, 24, 24);
@@ -469,41 +469,45 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_function] -- add your button handler code here..
         //[/UserButtonCode_function]
     }
-    else if (buttonThatWasClicked == setA)
+    else if (buttonThatWasClicked == storageA)
     {
-        //[UserButtonCode_setA] -- add your button handler code here..
-
+        //[UserButtonCode_storageA] -- add your button handler code here..
+        
+        // When FUNC is activated, we set total to storage
         if(function->getToggleState())
         {
             calculateObject.setStorageA();
         }
-
+        
+        // When FUNC is not activated, we put storage in either total or operand
         else
         {
             calculateObject.setTotalFromStorageA();
         }
         
         function->setToggleState(false, dontSendNotification);
-
-        //[/UserButtonCode_setA]
+        
+        //[/UserButtonCode_storageA]
     }
-    else if (buttonThatWasClicked == setB)
+    else if (buttonThatWasClicked == storageB)
     {
-        //[UserButtonCode_setB] -- add your button handler code here..
-
+        //[UserButtonCode_storageB] -- add your button handler code here..
+        
+        // When FUNC is activated, we set total to storage
         if(function->getToggleState())
         {
             calculateObject.setStorageB();
         }
-
+        
+        // When FUNC is not activated, we put storage in either total or operand
         else
         {
             calculateObject.setTotalFromStorageB();
         }
         
         function->setToggleState(false, dontSendNotification);
-
-        //[/UserButtonCode_setB]
+        
+        //[/UserButtonCode_storageB]
     }
     else if (buttonThatWasClicked == clear)
     {
@@ -521,7 +525,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         output->setText((String) calculateObject.getOperandOne());
         operatorOutput->setText((String) "");
-        
+
         function->setToggleState(false, dontSendNotification);
 
         //[/UserButtonCode_clear]
@@ -618,10 +622,10 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="160 168 80 80" bgColOff="ff929292"
               bgColOn="ffdc143c" textColOn="ff000000" buttonText="FUNC" connectedEdges="12"
               needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="setA" id="8165831a8eddd1a0" memberName="setA" virtualName=""
+  <TEXTBUTTON name="storageA" id="8165831a8eddd1a0" memberName="storageA" virtualName=""
               explicitFocusOrder="0" pos="0 168 80 80" bgColOff="ffdc143c"
               buttonText="A" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="setB" id="845f3f0ecd702467" memberName="setB" virtualName=""
+  <TEXTBUTTON name="setB" id="845f3f0ecd702467" memberName="storageB" virtualName=""
               explicitFocusOrder="0" pos="80 168 80 80" bgColOff="ffdc143c"
               buttonText="B" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="clear" id="b6484fd5b491bd9b" memberName="clear" virtualName=""
