@@ -294,7 +294,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_plus] -- add your button handler code here..
 
-        calculateObject.executeOperation(1);
+        calculateObject.executeOperation(addition);
         calculateObject.incrementOperatorUsageCount();
 
         //[/UserButtonCode_plus]
@@ -375,7 +375,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_minus] -- add your button handler code here..
 
-        calculateObject.executeOperation(2);
+        calculateObject.executeOperation(subtraction);
         calculateObject.incrementOperatorUsageCount();
 
         //[/UserButtonCode_minus]
@@ -384,7 +384,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_multiply] -- add your button handler code here..
 
-        calculateObject.executeOperation(3);
+        calculateObject.executeOperation(multiplication);
         calculateObject.incrementOperatorUsageCount();
 
         //[/UserButtonCode_multiply]
@@ -393,7 +393,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_divide] -- add your button handler code here..
 
-        calculateObject.executeOperation(4);
+        calculateObject.executeOperation(division);
         calculateObject.incrementOperatorUsageCount();
 
         //[/UserButtonCode_divide]

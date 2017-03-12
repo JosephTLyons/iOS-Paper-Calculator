@@ -57,6 +57,7 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
     Calculate calculateObject;
     Font textEditorFont;
+    enum{addition = 1, subtraction, multiplication, division};
 
     //[/UserVariables]
 
