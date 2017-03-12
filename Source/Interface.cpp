@@ -163,6 +163,28 @@ Interface::Interface ()
     paperCalcLabel->setColour (TextEditor::textColourId, Colours::black);
     paperCalcLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
+    addAndMakeVisible (operatorOutput = new TextEditor ("operatorOutput"));
+    operatorOutput->setMultiLine (false);
+    operatorOutput->setReturnKeyStartsNewLine (false);
+    operatorOutput->setReadOnly (false);
+    operatorOutput->setScrollbarsShown (true);
+    operatorOutput->setCaretVisible (true);
+    operatorOutput->setPopupMenuEnabled (true);
+    operatorOutput->setColour (TextEditor::textColourId, Colours::white);
+    operatorOutput->setColour (TextEditor::backgroundColourId, Colour (0xff1f1f1f));
+    operatorOutput->setText (String());
+
+    addAndMakeVisible (operandOutput = new TextEditor ("operatorOutput"));
+    operandOutput->setMultiLine (false);
+    operandOutput->setReturnKeyStartsNewLine (false);
+    operandOutput->setReadOnly (false);
+    operandOutput->setScrollbarsShown (true);
+    operandOutput->setCaretVisible (true);
+    operandOutput->setPopupMenuEnabled (true);
+    operandOutput->setColour (TextEditor::textColourId, Colours::white);
+    operandOutput->setColour (TextEditor::backgroundColourId, Colour (0xff1f1f1f));
+    operandOutput->setText (String());
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -181,6 +203,9 @@ Interface::Interface ()
     // Make a new font object and pass into output textEditor
     textEditorFont.setSizeAndStyle(50, normal, 1, 0);
     output->setFont(textEditorFont);
+    
+    // Set operandOutput to initial value (0)
+    operandOutput->setText((String) calculateObject.getOperandOne());
 
     //[/Constructor]
 }
@@ -212,6 +237,8 @@ Interface::~Interface()
     setB = nullptr;
     clear = nullptr;
     paperCalcLabel = nullptr;
+    operatorOutput = nullptr;
+    operandOutput = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -235,7 +262,7 @@ void Interface::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    output->setBounds (0, 96, 320, 72);
+    output->setBounds (0, 72, 320, 72);
     zero->setBounds (0, 488, 80, 80);
     decimalPoint->setBounds (80, 488, 80, 80);
     equals->setBounds (160, 488, 80, 80);
@@ -256,7 +283,9 @@ void Interface::resized()
     setA->setBounds (0, 168, 80, 80);
     setB->setBounds (80, 168, 80, 80);
     clear->setBounds (240, 488, 80, 80);
-    paperCalcLabel->setBounds (0, 0, 320, 96);
+    paperCalcLabel->setBounds (0, -19, 320, 96);
+    operatorOutput->setBounds (0, 144, 32, 24);
+    operandOutput->setBounds (32, 144, 288, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -296,6 +325,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.executeOperation(addition);
         calculateObject.incrementOperatorUsageCount();
+        operatorOutput->setText((String) "+");
 
         //[/UserButtonCode_plus]
     }
@@ -377,6 +407,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.executeOperation(subtraction);
         calculateObject.incrementOperatorUsageCount();
+        operatorOutput->setText((String) "-");
 
         //[/UserButtonCode_minus]
     }
@@ -386,6 +417,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.executeOperation(multiplication);
         calculateObject.incrementOperatorUsageCount();
+        operatorOutput->setText((String) "X");
 
         //[/UserButtonCode_multiply]
     }
@@ -395,6 +427,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         calculateObject.executeOperation(division);
         calculateObject.incrementOperatorUsageCount();
+        operatorOutput->setText((String) "/");
 
         //[/UserButtonCode_divide]
     }
@@ -411,7 +444,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         {
             calculateObject.setStorageA();
         }
-        
+
         else
         {
             calculateObject.setTotalFromStorageA();
@@ -427,7 +460,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         {
             calculateObject.setStorageB();
         }
-        
+
         else
         {
             calculateObject.setTotalFromStorageB();
@@ -455,9 +488,13 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     }
 
     //[UserbuttonClicked_Post]
-    
+
+    // Set output to new value
     output->setText((String) calculateObject.getTotalValue());
     
+    // Set operandOutput to new value
+    operandOutput->setText((String) calculateObject.getOperandOne());
+
     //[/UserbuttonClicked_Post]
 }
 
@@ -482,7 +519,7 @@ BEGIN_JUCER_METADATA
                  fixedSize="1" initialWidth="320" initialHeight="568">
   <BACKGROUND backgroundColour="ff1f1f1f"/>
   <TEXTEDITOR name="output" id="ef90af45fd38f38d" memberName="output" virtualName=""
-              explicitFocusOrder="0" pos="0 96 320 72" textcol="ffffffff" bkgcol="ff1f1f1f"
+              explicitFocusOrder="0" pos="0 72 320 72" textcol="ffffffff" bkgcol="ff1f1f1f"
               initialText="" multiline="0" retKeyStartsLine="0" readonly="1"
               scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTBUTTON name="zero" id="f19566c64d00a477" memberName="zero" virtualName=""
@@ -547,10 +584,18 @@ BEGIN_JUCER_METADATA
               explicitFocusOrder="0" pos="240 488 80 80" bgColOff="ffdc143c"
               buttonText="Clear" connectedEdges="12" needsCallback="1" radioGroupId="0"/>
   <LABEL name="paperCalcLabel" id="73e54c5cb21febf6" memberName="paperCalcLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 0 320 96" textCol="ffffffff"
+         virtualName="" explicitFocusOrder="0" pos="0 -19 320 96" textCol="ffffffff"
          edTextCol="ff000000" edBkgCol="0" labelText="Paper Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Chalkduster" fontsize="56" bold="0" italic="0" justification="36"/>
+  <TEXTEDITOR name="operatorOutput" id="6f152493e6da4f75" memberName="operatorOutput"
+              virtualName="" explicitFocusOrder="0" pos="0 144 32 24" textcol="ffffffff"
+              bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
+  <TEXTEDITOR name="operatorOutput" id="ea066cc4fe5fc457" memberName="operandOutput"
+              virtualName="" explicitFocusOrder="0" pos="32 144 288 24" textcol="ffffffff"
+              bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -84,6 +84,8 @@ private:
     ScopedPointer<TextButton> setB;
     ScopedPointer<TextButton> clear;
     ScopedPointer<Label> paperCalcLabel;
+    ScopedPointer<TextEditor> operatorOutput;
+    ScopedPointer<TextEditor> operandOutput;
 
 
     //==============================================================================

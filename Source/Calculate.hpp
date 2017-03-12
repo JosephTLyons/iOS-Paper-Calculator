@@ -9,8 +9,6 @@
 #ifndef Calculate_hpp
 #define Calculate_hpp
 
-#include <stdio.h>
-
 class Calculate
 {
 private:
