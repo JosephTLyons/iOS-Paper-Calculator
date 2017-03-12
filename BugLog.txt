@@ -13,7 +13,8 @@ Features:
 
 1) Set output font to right justify somehow
 
-2) FUNC automatically untoggles after next button click
+2) FUNC automatically untoggles after next button click - TEMP FIX ONLY, TURNS IT OFF WHEN
+   A, B, or CLEAR are hit.  Change this to all buttons in the future.
 
 3) Be able to chain operations together (EX. 1 + 2 + 3 = 6 vs 1 + 2 = 3 + 3 = 6)
 

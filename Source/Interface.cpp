@@ -482,6 +482,8 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         {
             calculateObject.setTotalFromStorageA();
         }
+        
+        function->setToggleState(false, dontSendNotification);
 
         //[/UserButtonCode_setA]
     }
@@ -498,6 +500,8 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         {
             calculateObject.setTotalFromStorageB();
         }
+        
+        function->setToggleState(false, dontSendNotification);
 
         //[/UserButtonCode_setB]
     }
@@ -517,6 +521,8 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         output->setText((String) calculateObject.getOperandOne());
         operatorOutput->setText((String) "");
+        
+        function->setToggleState(false, dontSendNotification);
 
         //[/UserButtonCode_clear]
     }
