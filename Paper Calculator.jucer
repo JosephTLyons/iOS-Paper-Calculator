@@ -55,6 +55,10 @@
       <FILE id="iQiVkF" name="Interface.cpp" compile="1" resource="0" file="Source/Interface.cpp"/>
       <FILE id="tmjjNj" name="Calculate.hpp" compile="0" resource="0" file="Source/Calculate.hpp"/>
       <FILE id="VwKtKL" name="Calculate.cpp" compile="1" resource="0" file="Source/Calculate.cpp"/>
+      <FILE id="KgFrfU" name="Misc Functions.hpp" compile="0" resource="0"
+            file="Source/Misc Functions.hpp"/>
+      <FILE id="M8jD6n" name="Misc Functions.cpp" compile="1" resource="0"
+            file="Source/Misc Functions.cpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

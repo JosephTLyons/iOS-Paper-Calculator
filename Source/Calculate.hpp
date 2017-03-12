@@ -9,6 +9,8 @@
 #ifndef Calculate_hpp
 #define Calculate_hpp
 
+#include "Misc Functions.hpp"
+
 class Calculate
 {
 private:
@@ -18,8 +20,6 @@ private:
     double storageA;
     double storageB;
     
-    // enum values are related to what operatorChosen will do when those values are stored in it
-    enum{addition = 1, subtraction, multiplication, division};
     int operatorChosen;
     int operatorUsageCount;
     

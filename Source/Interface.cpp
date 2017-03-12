@@ -18,6 +18,9 @@
 */
 
 //[Headers] You can add your own extra header files here...
+
+#include "Misc Functions.hpp"
+
 //[/Headers]
 
 #include "Interface.h"
