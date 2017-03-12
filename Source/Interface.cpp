@@ -231,7 +231,7 @@ Interface::Interface ()
 
     // Set operandOutput to initial value (0)
     operandOutput->setText((String) calculateObject.getOperandOne());
-    
+
     // Set storageOutputs to initial values (0)
     storageAOutput->setText((String) calculateObject.getStorageA());
     storageBOutput->setText((String) calculateObject.getStorageB());
@@ -315,10 +315,10 @@ void Interface::resized()
     setB->setBounds (80, 168, 80, 80);
     clear->setBounds (240, 488, 80, 80);
     paperCalcLabel->setBounds (0, -19, 320, 96);
-    operatorOutput->setBounds (0, 144, 24, 24);
-    operandOutput->setBounds (24, 144, 136, 24);
-    storageAOutput->setBounds (160, 144, 80, 24);
-    storageBOutput->setBounds (240, 144, 80, 24);
+    operatorOutput->setBounds (160, 144, 24, 24);
+    operandOutput->setBounds (184, 144, 136, 24);
+    storageAOutput->setBounds (0, 144, 80, 24);
+    storageBOutput->setBounds (80, 144, 80, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -627,19 +627,19 @@ BEGIN_JUCER_METADATA
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Chalkduster" fontsize="56" bold="0" italic="0" justification="36"/>
   <TEXTEDITOR name="operatorOutput" id="6f152493e6da4f75" memberName="operatorOutput"
-              virtualName="" explicitFocusOrder="0" pos="0 144 24 24" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="160 144 24 24" textcol="ffffffff"
               bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
   <TEXTEDITOR name="operatorOutput" id="ea066cc4fe5fc457" memberName="operandOutput"
-              virtualName="" explicitFocusOrder="0" pos="24 144 136 24" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="184 144 136 24" textcol="ffffffff"
               bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
   <TEXTEDITOR name="storageAOutput" id="f2023164c91320ae" memberName="storageAOutput"
-              virtualName="" explicitFocusOrder="0" pos="160 144 80 24" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="0 144 80 24" textcol="ffffffff"
               bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
   <TEXTEDITOR name="storageBOutput" id="90908b33051b1ed8" memberName="storageBOutput"
-              virtualName="" explicitFocusOrder="0" pos="240 144 80 24" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="80 144 80 24" textcol="ffffffff"
               bkgcol="ff1f1f1f" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="0" scrollbars="1" caret="1" popupmenu="1"/>
 </JUCER_COMPONENT>
