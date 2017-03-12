@@ -270,7 +270,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_zero] -- add your button handler code here..
 
-        calculateObject.buildInputValue(0);
+        calculateObject.addToInputValue(0);
 
         //[/UserButtonCode_zero]
     }
@@ -303,7 +303,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_one] -- add your button handler code here..
 
-        calculateObject.buildInputValue(1);
+        calculateObject.addToInputValue(1);
 
         //[/UserButtonCode_one]
     }
@@ -311,7 +311,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_two] -- add your button handler code here..
 
-        calculateObject.buildInputValue(2);
+        calculateObject.addToInputValue(2);
 
         //[/UserButtonCode_two]
     }
@@ -319,7 +319,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_three] -- add your button handler code here..
 
-        calculateObject.buildInputValue(3);
+        calculateObject.addToInputValue(3);
 
         //[/UserButtonCode_three]
     }
@@ -327,7 +327,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_four] -- add your button handler code here..
 
-        calculateObject.buildInputValue(4);
+        calculateObject.addToInputValue(4);
 
         //[/UserButtonCode_four]
     }
@@ -335,7 +335,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_five] -- add your button handler code here..
 
-        calculateObject.buildInputValue(5);
+        calculateObject.addToInputValue(5);
 
         //[/UserButtonCode_five]
     }
@@ -343,7 +343,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_six] -- add your button handler code here..
 
-        calculateObject.buildInputValue(6);
+        calculateObject.addToInputValue(6);
 
         //[/UserButtonCode_six]
     }
@@ -351,7 +351,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_seven] -- add your button handler code here..
 
-        calculateObject.buildInputValue(7);
+        calculateObject.addToInputValue(7);
 
         //[/UserButtonCode_seven]
     }
@@ -359,7 +359,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_eight] -- add your button handler code here..
 
-        calculateObject.buildInputValue(8);
+        calculateObject.addToInputValue(8);
 
         //[/UserButtonCode_eight]
     }
@@ -367,7 +367,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_nine] -- add your button handler code here..
 
-        calculateObject.buildInputValue(9);
+        calculateObject.addToInputValue(9);
 
         //[/UserButtonCode_nine]
     }

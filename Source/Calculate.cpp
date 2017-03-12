@@ -77,7 +77,7 @@ void Calculate::executeOperation(const int &input)
     resetToNonDecimalNumberInput();
 }
 
-void Calculate::buildInputValue(const int &singleDigitInput)
+void Calculate::addToInputValue(const int &singleDigitInput)
 {
     
     // Only store in total for first calculation

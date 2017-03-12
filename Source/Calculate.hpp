@@ -44,7 +44,7 @@ public:
     
     void performCalculation();
     void executeOperation(const int &input);
-    void buildInputValue(const int &singleDigitInput);
+    void addToInputValue(const int &singleDigitInput);
     
     void incrementOperatorUsageCount();
     
