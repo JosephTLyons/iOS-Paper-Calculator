@@ -483,6 +483,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         }
 
         output->setText((String) calculateObject.getOperandOne());
+        operatorOutput->setText((String) "");
 
         //[/UserButtonCode_clear]
     }
