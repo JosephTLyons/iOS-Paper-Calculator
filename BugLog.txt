@@ -2,18 +2,11 @@ Bugs:
 
 1) Be able to show both first and second number typed in output textEditor
 
-2) Precision when working with some floats is incorrect (under the hood?).
+2) Precision of the float under when working with some floats is incorrect (under the hood?).
 
-3) Cant toggle function button twice
+3) Exponential notation happens way too soon
 
-4) Selecting an operator twice before hitting equals screws up the calculation - this is due to
-   The nature of moving the operand to total, if done twice, the second time moves a zero to total
-
-5) Exponential notation happens way too soon
-
-6) Clicking equals doesn't always output the right value
-
-7) Input into variables A and B work fine (from total only, still no way to get it from operand),
+4) Input into variables A and B work fine (from total only, still no way to get it from operand),
    but the issue is that setting the value to total has issues.  We can't perform operations on them
    since both A and B set them to total - need to figure out how to set one to operator and one to
    total.'
@@ -21,3 +14,5 @@ Bugs:
 Features:
 
 1) Set output font to right justify somehow
+
+2) FUNC automatically untoggles after next button click
