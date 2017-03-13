@@ -16,7 +16,7 @@ class Calculate
 private:
     
     double total;
-    double operandOne;
+    double operand;
     double storageA;
     double storageB;
     

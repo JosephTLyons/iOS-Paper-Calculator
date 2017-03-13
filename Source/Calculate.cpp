@@ -22,7 +22,7 @@ void Calculate::clearTotal()
 
 void Calculate::clearOperand()
 {
-    operandOne = 0;
+    operand = 0;
 }
 
 void Calculate::resetToNonDecimalNumberInput()
@@ -53,16 +53,16 @@ void Calculate::performCalculation()
     switch (operatorChosen)
     {
         case addition:
-            total = total + operandOne;
+            total = total + operand;
             break;
         case subtraction:
-            total = total - operandOne;
+            total = total - operand;
             break;
         case multiplication:
-            total = total * operandOne;
+            total = total * operand;
             break;
         case division:
-            total = total / operandOne;
+            total = total / operand;
             break;
             // Do nothing
         default:
@@ -88,7 +88,7 @@ void Calculate::addToInputValue(const int &singleDigitInput)
     
     else
     {
-        operandOne = calculateInputNumber(operandOne, singleDigitInput);
+        operand = calculateInputNumber(operand, singleDigitInput);
     }
 }
 
@@ -153,17 +153,17 @@ void Calculate::setTotalFromStorageB()
 
 void Calculate::setOperandFromStorageA()
 {
-    operandOne = storageA;
+    operand = storageA;
 }
 
 void Calculate::setOperandFromStorageB()
 {
-    operandOne = storageB;
+    operand = storageB;
 }
 
 double Calculate::getOperandOne()
 {
-    return operandOne;
+    return operand;
 }
 
 double Calculate::getTotalValue()
