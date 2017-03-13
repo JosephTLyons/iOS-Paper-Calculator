@@ -1,3 +1,7 @@
+ToDo:
+
+1) Document all undocumented code.
+
 Bugs:
 
 1) Precision of the float under when working with some floats is incorrect (under the hood?).
@@ -14,4 +18,4 @@ Features:
 3) Be able to chain operations together (EX. 1 + 2 + 3 = 6 vs 1 + 2 = 3 + 3 = 6)
 
 4) Make it so only values in operand and storage only show when they have a value, but not
-   when they only contain zero (disappear whne not needed philosophy)
+   when they only contain zero (disappear when not needed philosophy)
