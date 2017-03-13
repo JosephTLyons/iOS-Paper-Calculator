@@ -235,6 +235,8 @@ Interface::Interface ()
     // Set storageOutputs to initial values (0)
     storageAOutput->setText((String) calculateObject.getStorageA());
     storageBOutput->setText((String) calculateObject.getStorageB());
+    
+    putStorageInTotal = true;
 
     //[/Constructor]
 }
@@ -482,7 +484,16 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         // When FUNC is not activated, we put storage in either total or operand
         else
         {
-            calculateObject.setTotalFromStorageA();
+            if (putStorageInTotal)
+            {
+                calculateObject.setTotalFromStorageA();
+            }
+            
+            else
+            {
+            }
+            
+            putStorageInTotal = false;
         }
         
         function->setToggleState(false, dontSendNotification);
