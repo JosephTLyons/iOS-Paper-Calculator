@@ -487,10 +487,12 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
             if (putStorageInTotal)
             {
                 calculateObject.setTotalFromStorageA();
+                putStorageInTotal = false;
             }
             
             else
             {
+                calculateObject.setOperandFromStorageA();
             }
             
             putStorageInTotal = false;
@@ -513,7 +515,18 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
         // When FUNC is not activated, we put storage in either total or operand
         else
         {
-            calculateObject.setTotalFromStorageB();
+            if (putStorageInTotal)
+            {
+                calculateObject.setTotalFromStorageB();
+                putStorageInTotal = false;
+            }
+            
+            else
+            {
+                calculateObject.setOperandFromStorageB();
+            }
+            
+            putStorageInTotal = false;
         }
         
         function->setToggleState(false, dontSendNotification);
@@ -536,6 +549,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
 
         output->setText((String) calculateObject.getOperandOne());
         operatorOutput->setText((String) "");
+        putStorageInTotal = true;
 
         function->setToggleState(false, dontSendNotification);
 

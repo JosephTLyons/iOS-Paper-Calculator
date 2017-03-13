@@ -51,6 +51,8 @@ public:
     void setStorageB();
     void setTotalFromStorageA();
     void setTotalFromStorageB();
+    void setOperandFromStorageA();
+    void setOperandFromStorageB();
     
     double getOperandOne();
     double getTotalValue();

@@ -151,6 +151,16 @@ void Calculate::setTotalFromStorageB()
     total = storageB;
 }
 
+void Calculate::setOperandFromStorageA()
+{
+    operandOne = storageA;
+}
+
+void Calculate::setOperandFromStorageB()
+{
+    operandOne = storageB;
+}
+
 double Calculate::getOperandOne()
 {
     return operandOne;
