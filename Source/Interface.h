@@ -57,8 +57,6 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
     Calculate calculateObject;
     Font textEditorFont;
-    
-    bool putStorageInTotal;
 
     //[/UserVariables]
 
