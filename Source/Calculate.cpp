@@ -79,13 +79,12 @@ void Calculate::executeOperation(const int &input)
 
 void Calculate::addToInputValue(const int &singleDigitInput)
 {
-    
     // Only store in total for first calculation
     if (operatorUsageCount == 0)
     {
         total = calculateInputNumber(total, singleDigitInput);
     }
-    
+
     else
     {
         operand = calculateInputNumber(operand, singleDigitInput);
@@ -100,14 +99,14 @@ void Calculate::incrementOperatorUsageCount()
 double Calculate::calculateInputNumber(double baseNumber, const int &singleDigitInput)
 {
     double temporarySingleValueInput = singleDigitInput;
-    
+
     // Build whole value number
     if(decimalPointFlag == false)
     {
         baseNumber *= 10;
         baseNumber += temporarySingleValueInput;
     }
-    
+
     // Build values to the right of the decimal point
     else
     {
@@ -115,7 +114,7 @@ double Calculate::calculateInputNumber(double baseNumber, const int &singleDigit
         temporarySingleValueInput /= dividingNumberForDecimalPlace;
         baseNumber += temporarySingleValueInput;
     }
-    
+
     return baseNumber;
 }
 
