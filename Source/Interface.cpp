@@ -494,8 +494,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
             {
                 calculateObject.setOperandFromStorageA();
             }
-            
-            putStorageInTotal = false;
         }
         
         function->setToggleState(false, dontSendNotification);
@@ -525,8 +523,6 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
             {
                 calculateObject.setOperandFromStorageB();
             }
-            
-            putStorageInTotal = false;
         }
         
         function->setToggleState(false, dontSendNotification);
