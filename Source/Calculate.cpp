@@ -70,7 +70,7 @@ void Calculate::performCalculation()
     }
 }
 
-void Calculate::executeOperation(const int &input)
+void Calculate::executeOperator(const int &input)
 {
     setOperationChosen(input);
     clearOperand();

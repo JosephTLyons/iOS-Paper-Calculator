@@ -41,7 +41,7 @@ public:
     void advancedClear();
     
     void performCalculation();
-    void executeOperation(const int &input);
+    void executeOperator(const int &input);
     void addToInputValue(const int &singleDigitInput);
     
     void incrementOperatorUsageCount();

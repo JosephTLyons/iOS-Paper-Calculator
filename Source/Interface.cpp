@@ -358,7 +358,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_plus] -- add your button handler code here..
 
-        calculateObject.executeOperation(addition);
+        calculateObject.executeOperator(addition);
         calculateObject.incrementOperatorUsageCount();
         operatorOutput->setText((String) "+");
 
@@ -440,7 +440,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_minus] -- add your button handler code here..
 
-        calculateObject.executeOperation(subtraction);
+        calculateObject.executeOperator(subtraction);
         calculateObject.incrementOperatorUsageCount();
         operatorOutput->setText((String) "-");
 
@@ -450,7 +450,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_multiply] -- add your button handler code here..
 
-        calculateObject.executeOperation(multiplication);
+        calculateObject.executeOperator(multiplication);
         calculateObject.incrementOperatorUsageCount();
         operatorOutput->setText((String) "X");
 
@@ -460,7 +460,7 @@ void Interface::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_divide] -- add your button handler code here..
 
-        calculateObject.executeOperation(division);
+        calculateObject.executeOperator(division);
         calculateObject.incrementOperatorUsageCount();
         operatorOutput->setText((String) "/");
 
