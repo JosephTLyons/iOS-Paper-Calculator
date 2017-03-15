@@ -14,38 +14,38 @@
 class Calculate
 {
 private:
-    
+
     double total;
     double operand;
     double storageA;
     double storageB;
-    
+
     int operatorChosen;
     int operatorUsageCount;
-    
+
     double calculateInputNumber(double baseNumber, const int &singleDigitInput);
-    
+
     bool decimalPointFlag;
     double dividingNumberForDecimalPlace;
-    
+
     void clearTotal();
     void clearOperand();
     void resetToNonDecimalNumberInput();
     void setOperationChosen(const int &input);
-    
+
 public:
-    
+
     Calculate();
-    
+
     void basicClear();
     void advancedClear();
-    
+
     void performCalculation();
     void executeOperator(const int &input);
     void addToInputValue(const int &singleDigitInput);
     
     void incrementOperatorUsageCount();
-    
+
     void setDecimalPointFlag(const bool &trueOrFalse);
     void setStorageA();
     void setStorageB();
@@ -53,10 +53,10 @@ public:
     void setTotalFromStorageB();
     void setOperandFromStorageA();
     void setOperandFromStorageB();
-    
+
     double getOperandOne();
     double getTotalValue();
-    
+
     double getStorageA();
     double getStorageB();
 };
