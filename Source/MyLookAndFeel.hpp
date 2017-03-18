@@ -15,7 +15,7 @@ struct MyLookAndFeel : public LookAndFeel_V3
 {
     Font getTextButtonFont (TextButton&, int buttonHeight) override
     {
-        return Font (jmin (15.0f, buttonHeight * 0.6f));
+        return Font (jmin (25.0f, buttonHeight * 0.6f));
     }
 };
 

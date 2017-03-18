@@ -20,7 +20,6 @@
 //[Headers] You can add your own extra header files here...
 
 #include "Misc Functions.hpp"
-#include "MyLookAndFeel.hpp"
 
 //[/Headers]
 
@@ -238,11 +237,8 @@ Interface::Interface ()
     storageBOutput->setText((String) calculateObject.getStorageB());
     
     putStorageInTotal = true;
-
-//  Don't give up yet on learning how to override! :(
-//    TextButton myButton;
-//    
-//    myButton.setLookAndFeel(MyLookAndFeel);
+    
+    setLookAndFeel(&stuff);
 
     //[/Constructor]
 }
