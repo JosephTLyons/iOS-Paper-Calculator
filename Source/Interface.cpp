@@ -238,7 +238,7 @@ Interface::Interface ()
     
     putStorageInTotal = true;
     
-    setLookAndFeel(&stuff);
+    setLookAndFeel(&myLookAndFeel);
 
     //[/Constructor]
 }

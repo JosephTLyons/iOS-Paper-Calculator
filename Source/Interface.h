@@ -58,7 +58,7 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
     Calculate calculateObject;
     Font textEditorFont;
-    MyLookAndFeel stuff;
+    MyLookAndFeel myLookAndFeel;
     
     bool putStorageInTotal;
 
