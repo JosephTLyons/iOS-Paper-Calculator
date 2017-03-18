@@ -59,6 +59,8 @@
             file="Source/Misc Functions.hpp"/>
       <FILE id="M8jD6n" name="Misc Functions.cpp" compile="1" resource="0"
             file="Source/Misc Functions.cpp"/>
+      <FILE id="oPBm1z" name="MyLookAndFeel.hpp" compile="0" resource="0"
+            file="Source/MyLookAndFeel.hpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
